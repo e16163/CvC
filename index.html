@@ -8,24 +8,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0c0c11;
-  --bg2:#111118;
-  --bg3:#17171f;
-  --bg4:#1c1c26;
-  --p1:#3a7bd5;
-  --p1b:#0d1f3c;
-  --p1l:#5b96e8;
-  --p2:#d63c3c;
-  --p2b:#3a0e0e;
-  --p2l:#e86060;
-  --gold:#d4a843;
-  --goldd:#8a6b20;
-  --goldl:#e8c472;
-  --text:#eeecf8;
-  --text2:#b0aec8;
-  --muted:#52516a;
-  --border:#1f1f2e;
-  --border2:#2a2a3d;
+  --bg:#0c0c11;--bg2:#111118;--bg3:#17171f;--bg4:#1c1c26;
+  --p1:#3a7bd5;--p1b:#0d1f3c;--p1l:#5b96e8;
+  --p2:#d63c3c;--p2b:#3a0e0e;--p2l:#e86060;
+  --gold:#d4a843;--goldd:#8a6b20;--goldl:#e8c472;
+  --text:#eeecf8;--text2:#b0aec8;--muted:#52516a;
+  --border:#1f1f2e;--border2:#2a2a3d;
   --font-display:'Bebas Neue',sans-serif;
   --font-body:'Barlow',sans-serif;
   --font-cond:'Barlow Condensed',sans-serif;
@@ -43,14 +31,13 @@ input{font-family:inherit;color:inherit;}
 .screen.active{display:flex;}
 
 .logo-box{background:#fff;border-radius:6px;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
-.logo-box img{display:block;object-fit:contain;image-rendering:auto;-webkit-font-smoothing:antialiased;}
+.logo-box img{display:block;object-fit:contain;}
 .logo-box .logo-init{font-family:var(--font-display);font-size:inherit;letter-spacing:0;line-height:1;}
 
 /* ── SELECTION ── */
 #sel{position:relative;}
 #sel::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 60% 50% at 15% 20%,rgba(58,123,213,.05),transparent),radial-gradient(ellipse 60% 50% at 85% 80%,rgba(214,60,60,.05),transparent);}
 #sel::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:48px 48px;}
-
 .site-header{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;border-bottom:1px solid var(--border);background:rgba(12,12,17,.9);backdrop-filter:blur(16px);}
 .site-logo{display:flex;flex-direction:column;gap:2px;}
 .site-logo-main{font-family:var(--font-display);font-size:24px;letter-spacing:3px;display:flex;align-items:baseline;gap:0;white-space:nowrap;line-height:1;}
@@ -61,7 +48,6 @@ input{font-family:inherit;color:inherit;}
 .prefs-btn{display:flex;align-items:center;gap:8px;padding:8px 18px;border-radius:6px;border:1px solid var(--border2);background:var(--bg3);font-family:var(--font-cond);font-size:12px;font-weight:600;letter-spacing:2px;color:var(--text2);transition:all .2s;text-transform:uppercase;}
 .prefs-btn:hover{border-color:var(--gold);color:var(--gold);}
 .prefs-btn.open{border-color:var(--gold);color:var(--gold);}
-
 .arena{position:relative;z-index:10;display:grid;grid-template-columns:1fr 130px 1fr;flex:1;padding:24px 28px 32px;max-width:1400px;margin:0 auto;width:100%;}
 .fighter-panel{display:flex;flex-direction:column;gap:10px;}
 .panel-label{font-family:var(--font-mono);font-size:9px;letter-spacing:4px;text-transform:uppercase;padding:4px 0;display:flex;align-items:center;gap:8px;}
@@ -108,8 +94,6 @@ input{font-family:inherit;color:inherit;}
 .fight-btn.ready{background:linear-gradient(160deg,#b02020,#e04040);border-color:transparent;color:#fff;cursor:pointer;box-shadow:0 0 32px rgba(224,64,64,.3);animation:fightPulse 1.6s ease-in-out infinite;}
 @keyframes fightPulse{0%,100%{box-shadow:0 0 24px rgba(214,60,60,.25);}50%{box-shadow:0 0 48px rgba(214,60,60,.55);}}
 .fight-btn.ready:hover{animation:none;transform:scale(1.07);box-shadow:0 0 56px rgba(214,60,60,.7);}
-
-/* prefs drawer */
 .prefs-drawer{position:relative;z-index:10;max-width:1400px;width:100%;margin:0 auto;padding:0 28px;max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);}
 .prefs-drawer.open{max-height:400px;}
 .prefs-inner{border:1px solid var(--border);border-radius:var(--radius);background:var(--bg2);padding:22px;margin-bottom:0;}
@@ -157,15 +141,7 @@ input{font-family:inherit;color:inherit;}
 .fitgate-skip:hover{border-color:var(--muted);color:var(--text);}
 .fitgate-go{padding:11px 32px;border-radius:6px;background:linear-gradient(135deg,#2660bf,#3a7bd5);border:none;color:#fff;font-family:var(--font-display);font-size:16px;letter-spacing:3px;cursor:pointer;transition:all .2s;box-shadow:0 0 24px rgba(58,123,213,.25);}
 .fitgate-go:hover{transform:translateY(-1px);box-shadow:0 0 40px rgba(58,123,213,.45);}
-
-/* personalised note badge */
-.personalised-note{
-  display:inline-flex;align-items:center;gap:6px;
-  font-family:var(--font-mono);font-size:8px;letter-spacing:2px;
-  color:var(--goldl);background:rgba(212,168,67,.08);
-  border:1px solid rgba(212,168,67,.25);border-radius:4px;
-  padding:4px 10px;margin-bottom:10px;
-}
+.personalised-note{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:8px;letter-spacing:2px;color:var(--goldl);background:rgba(212,168,67,.08);border:1px solid rgba(212,168,67,.25);border-radius:4px;padding:4px 10px;margin-bottom:10px;}
 
 /* ── INTRO ── */
 #intro{position:fixed;inset:0;background:#06060a;z-index:500;align-items:center;justify-content:center;overflow:hidden;}
@@ -178,7 +154,7 @@ input{font-family:inherit;color:inherit;}
 .intro-side{position:absolute;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:14px;width:38%;max-width:38%;transition:left .55s cubic-bezier(.05,.9,.2,1),right .55s cubic-bezier(.05,.9,.2,1);}
 .intro-side.a{left:-60%;align-items:flex-start;padding-left:6%;}
 .intro-side.b{right:-60%;align-items:flex-end;padding-right:6%;}
-.intro-logo-box{width:80px;height:80px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.intro-logo-box{width:80px;height:80px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;}
 .intro-side.a .intro-logo-box{box-shadow:0 0 24px rgba(58,123,213,.3);}
 .intro-side.b .intro-logo-box{box-shadow:0 0 24px rgba(214,60,60,.3);}
 .intro-name{font-family:var(--font-display);font-size:clamp(16px,2.6vw,40px);letter-spacing:3px;line-height:1.1;word-break:break-word;max-width:100%;}
@@ -210,21 +186,18 @@ input{font-family:inherit;color:inherit;}
 .hbar-fill{height:100%;border-radius:2px;width:0;transition:width 1.8s cubic-bezier(.4,0,.2,1);}
 .hbar-fill.p1{background:linear-gradient(270deg,#1d4e9e,var(--p1l));}
 .hbar-fill.p2{background:linear-gradient(90deg,#8c1a1a,var(--p2l));}
-.hbar-pct{font-family:var(--font-mono);font-size:8px;width:30px;text-align:center;flex-shrink:0;}
+.hbar-pct{font-family:var(--font-mono);font-size:8px;width:40px;text-align:center;flex-shrink:0;}
 .hbar-pct.a{color:var(--p1l);}
 .hbar-pct.b{color:var(--p2l);}
-
-.cmp-tabs{display:flex;padding:0 24px;background:rgba(12,12,17,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(16px);position:sticky;top:57px;z-index:99;}
-.tbtn{display:flex;align-items:center;gap:6px;font-family:var(--font-cond);font-weight:600;font-size:12px;letter-spacing:2px;padding:13px 16px;background:none;border:none;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .18s;text-transform:uppercase;}
+.cmp-tabs{display:flex;padding:0 24px;background:rgba(12,12,17,.92);border-bottom:1px solid var(--border);backdrop-filter:blur(16px);position:sticky;top:57px;z-index:99;overflow-x:auto;}
+.tbtn{display:flex;align-items:center;gap:6px;font-family:var(--font-cond);font-weight:600;font-size:12px;letter-spacing:2px;padding:13px 16px;background:none;border:none;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .18s;text-transform:uppercase;white-space:nowrap;}
 .tbtn:hover{color:var(--text2);}
 .tbtn.on{color:var(--gold);border-bottom-color:var(--gold);}
 .tbtn svg{opacity:.5;transition:opacity .18s;}
 .tbtn.on svg{opacity:1;}
-
 .tpanel{display:none;padding:24px;}
 .tpanel.on{display:block;}
 .sec-title{font-family:var(--font-mono);font-size:8px;letter-spacing:4px;color:var(--gold);text-transform:uppercase;margin-bottom:18px;}
-
 .info-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
 .info-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center;}
 .info-lbl{font-family:var(--font-mono);font-size:7px;letter-spacing:3px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;}
@@ -239,7 +212,6 @@ input{font-family:inherit;color:inherit;}
 .info-winner-tag.a{background:var(--p1b);color:var(--p1l);border:1px solid rgba(58,123,213,.25);}
 .info-winner-tag.b{background:var(--p2b);color:var(--p2l);border:1px solid rgba(214,60,60,.25);}
 .info-winner-tag.tie{background:rgba(212,168,67,.07);color:var(--gold);border:1px solid rgba(212,168,67,.2);}
-
 .stat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;}
 .stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;cursor:pointer;transition:border-color .18s,transform .18s,box-shadow .18s;position:relative;}
 .stat-card:hover{border-color:rgba(212,168,67,.28);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.3);}
@@ -251,7 +223,6 @@ input{font-family:inherit;color:inherit;}
 .stat-winner-chip.a{background:var(--p1b);color:var(--p1l);border:1px solid rgba(58,123,213,.25);}
 .stat-winner-chip.b{background:var(--p2b);color:var(--p2l);border:1px solid rgba(214,60,60,.25);}
 .stat-winner-chip.tie{background:rgba(212,168,67,.07);color:var(--gold);border:1px solid rgba(212,168,67,.2);}
-
 .stat-bars{display:flex;flex-direction:column;gap:8px;}
 .sbar-row{display:flex;align-items:center;gap:7px;}
 .sbar-lbl{font-family:var(--font-cond);font-size:11px;font-weight:600;letter-spacing:.5px;width:76px;flex-shrink:0;}
@@ -261,8 +232,7 @@ input{font-family:inherit;color:inherit;}
 .sbar-fill{height:100%;border-radius:3px;width:0;transition:width 1.1s cubic-bezier(.4,0,.2,1);}
 .sbar-fill.a{background:linear-gradient(90deg,#1d4e9e,var(--p1l));}
 .sbar-fill.b{background:linear-gradient(90deg,#8c1a1a,var(--p2l));}
-.sbar-val{font-family:var(--font-mono);font-size:10px;width:24px;text-align:right;flex-shrink:0;color:var(--text2);}
-
+.sbar-val{font-family:var(--font-mono);font-size:10px;width:36px;text-align:right;flex-shrink:0;color:var(--text2);}
 .majors-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;}
 .maj-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:16px;transition:border-color .18s,transform .18s;cursor:pointer;}
 .maj-card:hover{transform:translateY(-2px);}
@@ -285,8 +255,7 @@ input{font-family:inherit;color:inherit;}
 .star{font-size:9px;color:rgba(255,255,255,.06);}
 .star.lit.a{color:var(--p1);}
 .star.lit.b{color:var(--p2);}
-.stars-num{font-family:var(--font-mono);font-size:10px;width:22px;text-align:right;color:var(--text2);}
-
+.stars-num{font-family:var(--font-mono);font-size:10px;width:28px;text-align:right;color:var(--text2);}
 .fit-quiz{max-width:740px;}
 .fit-section{margin-bottom:24px;}
 .fit-section-title{font-family:var(--font-cond);font-weight:600;font-size:14px;letter-spacing:.5px;color:var(--text);margin-bottom:10px;}
@@ -296,7 +265,7 @@ input{font-family:inherit;color:inherit;}
 .fit-chip.on{border-color:var(--gold);background:rgba(212,168,67,.07);color:var(--gold);}
 .fit-weights{display:flex;flex-direction:column;gap:10px;}
 .fw-row{display:flex;align-items:center;gap:12px;}
-.fw-lbl{font-family:var(--font-cond);font-size:12px;color:var(--text2);width:120px;flex-shrink:0;letter-spacing:.3px;}
+.fw-lbl{font-family:var(--font-cond);font-size:12px;color:var(--text2);width:140px;flex-shrink:0;letter-spacing:.3px;}
 .fw-slider{-webkit-appearance:none;flex:1;height:2px;border-radius:1px;background:var(--border2);outline:none;cursor:pointer;}
 .fw-slider::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--gold);cursor:pointer;}
 .fw-val{font-family:var(--font-mono);font-size:9px;color:var(--gold);width:26px;text-align:right;}
@@ -309,7 +278,6 @@ input{font-family:inherit;color:inherit;}
 .fit-result-breakdown{display:flex;justify-content:center;gap:16px;margin-top:14px;flex-wrap:wrap;}
 .fit-reason{background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:8px 14px;font-size:11px;color:var(--text2);}
 .fit-reason strong{color:var(--text);font-weight:600;}
-
 .verdict-wrap{max-width:740px;margin:0 auto;}
 .verdict-banner{text-align:center;padding:28px 20px;border-radius:10px;border:1px solid rgba(212,168,67,.25);background:linear-gradient(135deg,rgba(212,168,67,.03),rgba(212,168,67,.01));margin-bottom:24px;box-shadow:0 0 48px rgba(212,168,67,.06);}
 .verdict-ko{font-family:var(--font-mono);font-size:9px;letter-spacing:8px;color:var(--gold);margin-bottom:12px;}
@@ -326,10 +294,8 @@ input{font-family:inherit;color:inherit;}
 .vcat-win.a{color:var(--p1l);}
 .vcat-win.b{color:var(--p2l);}
 .vcat-win.tie{color:var(--gold);}
-
 .back-btn{display:inline-flex;align-items:center;gap:7px;margin:14px 24px;font-family:var(--font-mono);font-size:8px;letter-spacing:2px;color:var(--muted);border:1px solid var(--border);padding:8px 14px;border-radius:5px;cursor:pointer;transition:all .18s;}
 .back-btn:hover{color:var(--text);border-color:var(--muted);}
-
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;opacity:0;pointer-events:none;transition:opacity .22s;backdrop-filter:blur(5px);}
 .modal-overlay.open{opacity:1;pointer-events:auto;}
 .modal-panel{position:fixed;right:0;top:0;bottom:0;width:min(460px,90vw);background:var(--bg2);border-left:1px solid var(--border);z-index:201;overflow-y:auto;transform:translateX(100%);transition:transform .3s cubic-bezier(.2,1,.4,1);display:flex;flex-direction:column;}
@@ -350,7 +316,7 @@ input{font-family:inherit;color:inherit;}
 .modal-bar-fill{height:100%;border-radius:5px;transition:width .9s cubic-bezier(.4,0,.2,1);}
 .modal-bar-fill.a{background:linear-gradient(90deg,#1d4e9e,var(--p1l));}
 .modal-bar-fill.b{background:linear-gradient(90deg,#8c1a1a,var(--p2l));}
-.modal-bar-val{font-family:var(--font-mono);font-size:11px;width:26px;text-align:right;color:var(--text2);}
+.modal-bar-val{font-family:var(--font-mono);font-size:11px;width:36px;text-align:right;color:var(--text2);}
 .modal-verdict{text-align:center;padding:14px;border-radius:6px;border:1px solid var(--border);background:var(--bg3);margin-bottom:14px;}
 .modal-verdict-winner{font-family:var(--font-display);font-size:20px;letter-spacing:2px;}
 .modal-verdict-winner.a{color:var(--p1l);}
@@ -362,7 +328,6 @@ input{font-family:inherit;color:inherit;}
 .modal-context p{margin-bottom:9px;}
 .modal-tips{display:flex;flex-direction:column;gap:7px;}
 .modal-tip{padding:9px 13px;border-radius:6px;border:1px solid var(--border);background:var(--bg3);font-size:12px;line-height:1.5;color:var(--text2);}
-
 @keyframes shake{0%,100%{transform:translate(0);}15%{transform:translate(-9px,-3px);}30%{transform:translate(9px,3px);}45%{transform:translate(-6px,6px);}60%{transform:translate(6px,-6px);}75%{transform:translate(-3px,3px);}90%{transform:translate(3px,-3px);}}
 .shaking{animation:shake .4s ease-out;}
 @media(max-width:800px){.arena{grid-template-columns:1fr;gap:14px;}.vs-col{flex-direction:row;padding:0;}.info-row{grid-template-columns:1fr 1fr;}.cmp-header{grid-template-columns:1fr 1fr;grid-template-rows:auto auto;}.hdr-mid{grid-column:1/-1;order:3;}}
@@ -556,81 +521,216 @@ input{font-family:inherit;color:inherit;}
 /* ── DATA ── */
 const COLORS=['#A31F34','#8C1515','#C10016','#E05C00','#00356B','#C7452A','#012169','#800000','#011F5B','#002D72','#4E2A84','#002B5C','#00573F','#1A4A1A','#990000','#00205B','#003DA5','#CC0000','#003262','#003262','#041E42','#041E42','#B31B1B','#00274C','#9E1B32','#C9A227','#57068c','#CC0000','#7BAFD4','#8C1D40','#B3A369','#115740','#006A96','#CC0000','#022851','#002855','#232D4B','#A71930','#006400','#BB0000','#BF5700','#003366','#CEB888','#BB0000','#BF5700','#005030','#FA4616','#4B2E83','#C5050C','#990000','#002147','#006EB6','#003E74','#E37222','#006EB6','#003D7C','#7B0028','#6C1D45','#0D2240','#000F9C'];
 
+/* Base system weights (applied before user prefs multiply on top) */
+const BASE_WEIGHTS={
+  career:1.20, aid:1.15, research:1.10, prestige:1.05,
+  campus:1.05, intl:1.00, diversity:0.90, athletics:0.85
+};
+
 const SCORE_RATIONALE={
   research:"Publication volume, citation impact, Nobel laureates, and federal research funding.",
   campus:"Student satisfaction, housing quality, clubs, dining, and social scene depth.",
   career:"Alumni median salary 10 yrs out, employer recruiting presence, and network strength.",
   aid:"Average % of demonstrated need met, and net price for middle-income families.",
   diversity:"Racial, geographic, socioeconomic, and international student representation.",
-  athletics:"D1 teams, championship history, and prominence of athletics on campus."
+  athletics:"D1 teams, championship history, and prominence of athletics on campus.",
+  prestige:"Global brand recognition, rankings trajectory, alumni influence, and institutional reputation.",
+  intl:"Study-abroad programs, sustainability initiatives, global partnerships, and research impact."
 };
 
+/* ── COLLEGES ──
+   Scores are on 0-100 but are hard to get high — 95+ = world-class, 80+ = excellent, 60-79 = good, below 60 = average/weak.
+   Spread is intentionally wide so clear winners emerge.
+   New fields: prestige, intl (international impact + sustainability).
+   Major scores are /10, kept as-is but spread wider.
+*/
 const COLLEGES=[
-  {id:1,name:"MIT",full:"Massachusetts Institute of Technology",loc:"Cambridge, MA",domain:"mit.edu",accept:4,tuition:57,enroll:11.5,scores:{research:99,campus:74,career:98,aid:72,diversity:80,athletics:52},majors:{cs:10,eng:10,business:7,medicine:7,law:5,arts:6,science:10,social:7}},
-  {id:2,name:"Stanford",full:"Stanford University",loc:"Stanford, CA",domain:"stanford.edu",accept:4,tuition:56,enroll:17,scores:{research:98,campus:82,career:98,aid:74,diversity:83,athletics:88},majors:{cs:10,eng:9,business:10,medicine:9,law:9,arts:8,science:10,social:9}},
-  {id:3,name:"Harvard",full:"Harvard University",loc:"Cambridge, MA",domain:"harvard.edu",accept:3,tuition:54,enroll:23,scores:{research:98,campus:80,career:99,aid:77,diversity:84,athletics:82},majors:{cs:9,eng:8,business:10,medicine:10,law:10,arts:9,science:9,social:10}},
-  {id:4,name:"Caltech",full:"California Institute of Technology",loc:"Pasadena, CA",domain:"caltech.edu",accept:3,tuition:58,enroll:2.2,scores:{research:99,campus:63,career:96,aid:70,diversity:71,athletics:28},majors:{cs:10,eng:10,business:4,medicine:8,law:3,arts:4,science:10,social:5}},
-  {id:5,name:"Yale",full:"Yale University",loc:"New Haven, CT",domain:"yale.edu",accept:5,tuition:57,enroll:14,scores:{research:95,campus:86,career:96,aid:80,diversity:82,athletics:74},majors:{cs:8,eng:7,business:9,medicine:9,law:10,arts:10,science:9,social:9}},
-  {id:6,name:"Princeton",full:"Princeton University",loc:"Princeton, NJ",domain:"princeton.edu",accept:4,tuition:55,enroll:10,scores:{research:96,campus:83,career:96,aid:83,diversity:80,athletics:77},majors:{cs:9,eng:8,business:8,medicine:7,law:9,arts:9,science:10,social:9}},
-  {id:7,name:"Columbia",full:"Columbia University",loc:"New York, NY",domain:"columbia.edu",accept:4,tuition:61,enroll:32,scores:{research:94,campus:79,career:95,aid:72,diversity:87,athletics:63},majors:{cs:9,eng:8,business:9,medicine:9,law:9,arts:9,science:9,social:9}},
-  {id:8,name:"UChicago",full:"University of Chicago",loc:"Chicago, IL",domain:"uchicago.edu",accept:6,tuition:60,enroll:18,scores:{research:95,campus:71,career:94,aid:73,diversity:79,athletics:43},majors:{cs:8,eng:6,business:9,medicine:8,law:10,arts:8,science:9,social:10}},
-  {id:9,name:"UPenn",full:"University of Pennsylvania",loc:"Philadelphia, PA",domain:"upenn.edu",accept:7,tuition:61,enroll:28,scores:{research:93,campus:82,career:96,aid:71,diversity:83,athletics:71},majors:{cs:8,eng:8,business:10,medicine:9,law:9,arts:8,science:8,social:8}},
-  {id:10,name:"Johns Hopkins",full:"Johns Hopkins University",loc:"Baltimore, MD",domain:"jhu.edu",accept:7,tuition:58,enroll:26,scores:{research:97,campus:69,career:93,aid:67,diversity:78,athletics:48},majors:{cs:8,eng:9,business:6,medicine:10,law:6,arts:7,science:10,social:8}},
-  {id:11,name:"Northwestern",full:"Northwestern University",loc:"Evanston, IL",domain:"northwestern.edu",accept:7,tuition:60,enroll:22,scores:{research:92,campus:80,career:93,aid:70,diversity:80,athletics:77},majors:{cs:8,eng:8,business:9,medicine:8,law:9,arts:9,science:8,social:8}},
-  {id:12,name:"Duke",full:"Duke University",loc:"Durham, NC",domain:"duke.edu",accept:6,tuition:59,enroll:17,scores:{research:93,campus:85,career:94,aid:73,diversity:77,athletics:92},majors:{cs:8,eng:8,business:9,medicine:9,law:8,arts:8,science:9,social:8}},
-  {id:13,name:"Dartmouth",full:"Dartmouth College",loc:"Hanover, NH",domain:"dartmouth.edu",accept:8,tuition:59,enroll:8,scores:{research:87,campus:85,career:92,aid:79,diversity:73,athletics:74},majors:{cs:7,eng:7,business:9,medicine:7,law:8,arts:8,science:8,social:8}},
-  {id:14,name:"Brown",full:"Brown University",loc:"Providence, RI",domain:"brown.edu",accept:5,tuition:60,enroll:11,scores:{research:88,campus:88,career:90,aid:74,diversity:82,athletics:60},majors:{cs:8,eng:7,business:7,medicine:8,law:8,arts:9,science:8,social:9}},
-  {id:15,name:"Vanderbilt",full:"Vanderbilt University",loc:"Nashville, TN",domain:"vanderbilt.edu",accept:7,tuition:58,enroll:14,scores:{research:87,campus:84,career:91,aid:76,diversity:76,athletics:80},majors:{cs:7,eng:7,business:8,medicine:9,law:8,arts:8,science:8,social:8}},
-  {id:16,name:"Rice",full:"Rice University",loc:"Houston, TX",domain:"rice.edu",accept:8,tuition:52,enroll:8,scores:{research:88,campus:83,career:91,aid:78,diversity:75,athletics:58},majors:{cs:9,eng:9,business:7,medicine:7,law:5,arts:8,science:9,social:7}},
-  {id:17,name:"Notre Dame",full:"University of Notre Dame",loc:"Notre Dame, IN",domain:"nd.edu",accept:13,tuition:58,enroll:13,scores:{research:83,campus:87,career:90,aid:75,diversity:69,athletics:95},majors:{cs:7,eng:7,business:9,medicine:7,law:9,arts:8,science:7,social:8}},
-  {id:18,name:"Cornell",full:"Cornell University",loc:"Ithaca, NY",domain:"cornell.edu",accept:8,tuition:59,enroll:25,scores:{research:91,campus:77,career:92,aid:71,diversity:82,athletics:71},majors:{cs:9,eng:9,business:9,medicine:8,law:7,arts:8,science:9,social:8}},
-  {id:19,name:"UCLA",full:"University of California, Los Angeles",loc:"Los Angeles, CA",domain:"ucla.edu",accept:9,tuition:13,enroll:47,scores:{research:90,campus:85,career:90,aid:82,diversity:88,athletics:92},majors:{cs:9,eng:8,business:8,medicine:9,law:8,arts:9,science:9,social:8}},
-  {id:20,name:"UC Berkeley",full:"University of California, Berkeley",loc:"Berkeley, CA",domain:"berkeley.edu",accept:11,tuition:14,enroll:45,scores:{research:95,campus:79,career:92,aid:80,diversity:88,athletics:87},majors:{cs:10,eng:10,business:9,medicine:8,law:9,arts:8,science:10,social:9}},
-  {id:21,name:"Georgetown",full:"Georgetown University",loc:"Washington, DC",domain:"georgetown.edu",accept:12,tuition:58,enroll:20,scores:{research:81,campus:82,career:91,aid:69,diversity:80,athletics:67},majors:{cs:7,eng:5,business:9,medicine:7,law:10,arts:8,science:7,social:9}},
-  {id:22,name:"Emory",full:"Emory University",loc:"Atlanta, GA",domain:"emory.edu",accept:14,tuition:55,enroll:15,scores:{research:84,campus:77,career:88,aid:72,diversity:78,athletics:48},majors:{cs:7,eng:6,business:8,medicine:9,law:8,arts:7,science:8,social:8}},
-  {id:23,name:"CMU",full:"Carnegie Mellon University",loc:"Pittsburgh, PA",domain:"cmu.edu",accept:11,tuition:57,enroll:15,scores:{research:92,campus:71,career:95,aid:68,diversity:80,athletics:38},majors:{cs:10,eng:9,business:8,medicine:5,law:4,arts:9,science:8,social:6}},
-  {id:24,name:"U Michigan",full:"University of Michigan",loc:"Ann Arbor, MI",domain:"umich.edu",accept:18,tuition:15,enroll:47,scores:{research:90,campus:85,career:90,aid:78,diversity:83,athletics:95},majors:{cs:9,eng:9,business:9,medicine:9,law:9,arts:8,science:9,social:8}},
-  {id:25,name:"USC",full:"University of Southern California",loc:"Los Angeles, CA",domain:"usc.edu",accept:12,tuition:60,enroll:47,scores:{research:84,campus:85,career:88,aid:67,diversity:85,athletics:87},majors:{cs:8,eng:8,business:8,medicine:7,law:8,arts:9,science:7,social:8}},
-  {id:26,name:"Wake Forest",full:"Wake Forest University",loc:"Winston-Salem, NC",domain:"wfu.edu",accept:22,tuition:58,enroll:9,scores:{research:77,campus:82,career:86,aid:73,diversity:70,athletics:74},majors:{cs:6,eng:5,business:8,medicine:7,law:8,arts:7,science:7,social:7}},
-  {id:27,name:"NYU",full:"New York University",loc:"New York, NY",domain:"nyu.edu",accept:13,tuition:56,enroll:60,scores:{research:82,campus:76,career:88,aid:64,diversity:87,athletics:33},majors:{cs:8,eng:6,business:9,medicine:8,law:9,arts:10,science:7,social:8}},
-  {id:28,name:"Tufts",full:"Tufts University",loc:"Medford, MA",domain:"tufts.edu",accept:10,tuition:59,enroll:12,scores:{research:79,campus:79,career:86,aid:72,diversity:75,athletics:58},majors:{cs:7,eng:7,business:7,medicine:8,law:7,arts:8,science:8,social:8}},
-  {id:29,name:"UNC",full:"UNC Chapel Hill",loc:"Chapel Hill, NC",domain:"unc.edu",accept:17,tuition:9,enroll:32,scores:{research:85,campus:82,career:86,aid:80,diversity:79,athletics:88},majors:{cs:8,eng:7,business:8,medicine:9,law:8,arts:8,science:8,social:8}},
-  {id:30,name:"Boston College",full:"Boston College",loc:"Chestnut Hill, MA",domain:"bc.edu",accept:19,tuition:58,enroll:14,scores:{research:75,campus:83,career:86,aid:72,diversity:70,athletics:77},majors:{cs:6,eng:5,business:8,medicine:6,law:8,arts:7,science:7,social:8}},
-  {id:31,name:"Georgia Tech",full:"Georgia Institute of Technology",loc:"Atlanta, GA",domain:"gatech.edu",accept:17,tuition:12,enroll:40,scores:{research:88,campus:71,career:93,aid:74,diversity:77,athletics:85},majors:{cs:10,eng:10,business:7,medicine:5,law:4,arts:4,science:9,social:5}},
-  {id:32,name:"W&M",full:"William & Mary",loc:"Williamsburg, VA",domain:"wm.edu",accept:33,tuition:15,enroll:9,scores:{research:71,campus:82,career:83,aid:78,diversity:67,athletics:64},majors:{cs:6,eng:5,business:7,medicine:5,law:8,arts:8,science:7,social:8}},
-  {id:33,name:"UCSD",full:"UC San Diego",loc:"La Jolla, CA",domain:"ucsd.edu",accept:24,tuition:14,enroll:43,scores:{research:89,campus:72,career:87,aid:80,diversity:85,athletics:60},majors:{cs:9,eng:9,business:6,medicine:9,law:4,arts:6,science:10,social:7}},
-  {id:34,name:"BU",full:"Boston University",loc:"Boston, MA",domain:"bu.edu",accept:19,tuition:57,enroll:35,scores:{research:80,campus:74,career:85,aid:65,diversity:82,athletics:53},majors:{cs:7,eng:7,business:7,medicine:8,law:7,arts:8,science:7,social:7}},
-  {id:35,name:"UC Davis",full:"UC Davis",loc:"Davis, CA",domain:"ucdavis.edu",accept:38,tuition:14,enroll:40,scores:{research:84,campus:72,career:82,aid:79,diversity:85,athletics:67},majors:{cs:7,eng:8,business:6,medicine:8,law:5,arts:6,science:9,social:7}},
-  {id:36,name:"UCSB",full:"UC Santa Barbara",loc:"Santa Barbara, CA",domain:"ucsb.edu",accept:26,tuition:14,enroll:26,scores:{research:85,campus:78,career:81,aid:79,diversity:82,athletics:64},majors:{cs:8,eng:8,business:5,medicine:7,law:4,arts:7,science:9,social:7}},
-  {id:37,name:"UVA",full:"University of Virginia",loc:"Charlottesville, VA",domain:"virginia.edu",accept:20,tuition:16,enroll:25,scores:{research:83,campus:86,career:88,aid:77,diversity:74,athletics:84},majors:{cs:7,eng:7,business:9,medicine:7,law:9,arts:7,science:7,social:8}},
-  {id:38,name:"Case Western",full:"Case Western Reserve University",loc:"Cleveland, OH",domain:"case.edu",accept:27,tuition:54,enroll:12,scores:{research:82,campus:67,career:85,aid:70,diversity:73,athletics:38},majors:{cs:7,eng:8,business:6,medicine:9,law:5,arts:5,science:8,social:6}},
-  {id:39,name:"Tulane",full:"Tulane University",loc:"New Orleans, LA",domain:"tulane.edu",accept:11,tuition:57,enroll:14,scores:{research:76,campus:85,career:82,aid:70,diversity:77,athletics:64},majors:{cs:6,eng:6,business:8,medicine:8,law:7,arts:8,science:7,social:7}},
-  {id:40,name:"Rochester",full:"University of Rochester",loc:"Rochester, NY",domain:"rochester.edu",accept:30,tuition:56,enroll:11,scores:{research:82,campus:71,career:84,aid:71,diversity:74,athletics:43},majors:{cs:7,eng:8,business:6,medicine:8,law:4,arts:8,science:8,social:6}},
-  {id:41,name:"Lehigh",full:"Lehigh University",loc:"Bethlehem, PA",domain:"lehigh.edu",accept:32,tuition:57,enroll:9,scores:{research:71,campus:75,career:84,aid:68,diversity:63,athletics:71},majors:{cs:7,eng:8,business:7,medicine:4,law:4,arts:5,science:7,social:6}},
-  {id:42,name:"RPI",full:"Rensselaer Polytechnic Institute",loc:"Troy, NY",domain:"rpi.edu",accept:57,tuition:58,enroll:8,scores:{research:76,campus:63,career:87,aid:67,diversity:70,athletics:43},majors:{cs:8,eng:9,business:5,medicine:4,law:3,arts:4,science:8,social:4}},
-  {id:43,name:"Purdue",full:"Purdue University",loc:"W. Lafayette, IN",domain:"purdue.edu",accept:53,tuition:10,enroll:50,scores:{research:82,campus:74,career:88,aid:75,diversity:73,athletics:81},majors:{cs:8,eng:9,business:7,medicine:5,law:4,arts:5,science:8,social:5}},
-  {id:44,name:"Ohio State",full:"Ohio State University",loc:"Columbus, OH",domain:"osu.edu",accept:54,tuition:11,enroll:61,scores:{research:82,campus:82,career:83,aid:74,diversity:77,athletics:95},majors:{cs:7,eng:8,business:8,medicine:8,law:7,arts:7,science:7,social:7}},
-  {id:45,name:"UT Austin",full:"University of Texas at Austin",loc:"Austin, TX",domain:"utexas.edu",accept:32,tuition:11,enroll:51,scores:{research:83,campus:82,career:85,aid:76,diversity:82,athletics:90},majors:{cs:8,eng:8,business:9,medicine:7,law:8,arts:8,science:8,social:8}},
-  {id:46,name:"Penn State",full:"Penn State University",loc:"University Park, PA",domain:"psu.edu",accept:55,tuition:18,enroll:45,scores:{research:78,campus:82,career:82,aid:72,diversity:74,athletics:92},majors:{cs:7,eng:8,business:8,medicine:6,law:5,arts:6,science:7,social:7}},
-  {id:47,name:"UF",full:"University of Florida",loc:"Gainesville, FL",domain:"ufl.edu",accept:31,tuition:6,enroll:57,scores:{research:80,campus:77,career:82,aid:80,diversity:79,athletics:90},majors:{cs:7,eng:8,business:8,medicine:8,law:7,arts:6,science:8,social:7}},
-  {id:48,name:"UW Seattle",full:"University of Washington",loc:"Seattle, WA",domain:"washington.edu",accept:52,tuition:12,enroll:48,scores:{research:88,campus:75,career:87,aid:77,diversity:83,athletics:77},majors:{cs:9,eng:9,business:7,medicine:9,law:6,arts:6,science:9,social:7}},
-  {id:49,name:"UW Madison",full:"University of Wisconsin",loc:"Madison, WI",domain:"wisc.edu",accept:49,tuition:11,enroll:48,scores:{research:84,campus:80,career:82,aid:76,diversity:73,athletics:87},majors:{cs:7,eng:8,business:8,medicine:8,law:6,arts:7,science:8,social:7}},
-  {id:50,name:"Indiana U",full:"Indiana University",loc:"Bloomington, IN",domain:"indiana.edu",accept:77,tuition:10,enroll:45,scores:{research:74,campus:79,career:79,aid:73,diversity:75,athletics:77},majors:{cs:6,eng:5,business:8,medicine:5,law:7,arts:7,science:7,social:7}},
-  {id:51,name:"Oxford",full:"University of Oxford",loc:"Oxford, UK",domain:"ox.ac.uk",accept:17,tuition:28,enroll:24,scores:{research:99,campus:87,career:97,aid:70,diversity:81,athletics:71},majors:{cs:9,eng:8,business:9,medicine:10,law:10,arts:10,science:10,social:10}},
-  {id:52,name:"Cambridge",full:"University of Cambridge",loc:"Cambridge, UK",domain:"cam.ac.uk",accept:21,tuition:28,enroll:24,scores:{research:99,campus:85,career:97,aid:70,diversity:79,athletics:68},majors:{cs:10,eng:10,business:8,medicine:10,law:9,arts:9,science:10,social:9}},
-  {id:53,name:"Imperial",full:"Imperial College London",loc:"London, UK",domain:"imperial.ac.uk",accept:14,tuition:30,enroll:22,scores:{research:95,campus:71,career:94,aid:64,diversity:82,athletics:53},majors:{cs:9,eng:10,business:7,medicine:10,law:4,arts:3,science:10,social:5}},
-  {id:54,name:"ETH Zurich",full:"ETH Zürich",loc:"Zurich, Switzerland",domain:"ethz.ch",accept:27,tuition:2,enroll:22,scores:{research:97,campus:75,career:93,aid:82,diversity:79,athletics:50},majors:{cs:10,eng:10,business:6,medicine:7,law:4,arts:4,science:10,social:5}},
-  {id:55,name:"U Toronto",full:"University of Toronto",loc:"Toronto, Canada",domain:"utoronto.ca",accept:43,tuition:35,enroll:97,scores:{research:88,campus:75,career:85,aid:71,diversity:88,athletics:63},majors:{cs:8,eng:8,business:8,medicine:9,law:8,arts:7,science:9,social:8}},
-  {id:56,name:"NUS",full:"National University of Singapore",loc:"Singapore",domain:"nus.edu.sg",accept:19,tuition:25,enroll:40,scores:{research:90,campus:77,career:90,aid:78,diversity:82,athletics:58},majors:{cs:9,eng:9,business:9,medicine:9,law:7,arts:7,science:9,social:7}},
-  {id:57,name:"Peking U",full:"Peking University",loc:"Beijing, China",domain:"pku.edu.cn",accept:1,tuition:5,enroll:46,scores:{research:87,campus:79,career:85,aid:72,diversity:44,athletics:66},majors:{cs:9,eng:8,business:7,medicine:8,law:7,arts:8,science:9,social:7}},
-  {id:58,name:"U Tokyo",full:"University of Tokyo",loc:"Tokyo, Japan",domain:"u-tokyo.ac.jp",accept:33,tuition:6,enroll:28,scores:{research:88,campus:73,career:87,aid:76,diversity:44,athletics:60},majors:{cs:8,eng:9,business:6,medicine:9,law:7,arts:7,science:9,social:6}},
-  {id:59,name:"LSE",full:"London School of Economics",loc:"London, UK",domain:"lse.ac.uk",accept:16,tuition:26,enroll:12,scores:{research:88,campus:73,career:92,aid:64,diversity:88,athletics:38},majors:{cs:5,eng:3,business:10,medicine:3,law:9,arts:7,science:6,social:10}},
-  {id:60,name:"U Melbourne",full:"University of Melbourne",loc:"Melbourne, Australia",domain:"unimelb.edu.au",accept:71,tuition:32,enroll:52,scores:{research:84,campus:77,career:82,aid:70,diversity:77,athletics:68},majors:{cs:7,eng:7,business:8,medicine:8,law:7,arts:7,science:8,social:7}}
+  {id:1,name:"MIT",full:"Massachusetts Institute of Technology",loc:"Cambridge, MA",domain:"mit.edu",accept:4,tuition:57,enroll:11.5,
+   scores:{research:97.2,campus:68.4,career:96.8,aid:71.3,diversity:76.5,athletics:44.1,prestige:98.5,intl:88.2},
+   majors:{cs:10,eng:10,business:6,medicine:7,law:4,arts:5,science:10,social:6,math:10}},
+  {id:2,name:"Stanford",full:"Stanford University",loc:"Stanford, CA",domain:"stanford.edu",accept:4,tuition:56,enroll:17,
+   scores:{research:96.1,campus:80.3,career:97.4,aid:73.8,diversity:81.2,athletics:87.6,prestige:97.8,intl:91.4},
+   majors:{cs:10,eng:9,business:10,medicine:9,law:9,arts:8,science:10,social:9,math:9}},
+  {id:3,name:"Harvard",full:"Harvard University",loc:"Cambridge, MA",domain:"harvard.edu",accept:3,tuition:54,enroll:23,
+   scores:{research:96.4,campus:78.7,career:98.6,aid:77.2,diversity:82.9,athletics:81.3,prestige:99.1,intl:93.7},
+   majors:{cs:9,eng:8,business:10,medicine:10,law:10,arts:9,science:9,social:10,math:9}},
+  {id:4,name:"Caltech",full:"California Institute of Technology",loc:"Pasadena, CA",domain:"caltech.edu",accept:3,tuition:58,enroll:2.2,
+   scores:{research:98.4,campus:55.2,career:93.1,aid:68.7,diversity:67.3,athletics:18.4,prestige:92.6,intl:82.5},
+   majors:{cs:10,eng:10,business:3,medicine:8,law:2,arts:3,science:10,social:4,math:10}},
+  {id:5,name:"Yale",full:"Yale University",loc:"New Haven, CT",domain:"yale.edu",accept:5,tuition:57,enroll:14,
+   scores:{research:93.2,campus:85.1,career:95.3,aid:80.4,diversity:80.6,athletics:72.8,prestige:96.4,intl:87.9},
+   majors:{cs:8,eng:7,business:9,medicine:9,law:10,arts:10,science:9,social:9,math:8}},
+  {id:6,name:"Princeton",full:"Princeton University",loc:"Princeton, NJ",domain:"princeton.edu",accept:4,tuition:55,enroll:10,
+   scores:{research:94.7,campus:82.3,career:95.1,aid:84.2,diversity:78.4,athletics:75.9,prestige:97.2,intl:86.3},
+   majors:{cs:9,eng:8,business:8,medicine:7,law:9,arts:9,science:10,social:9,math:10}},
+  {id:7,name:"Columbia",full:"Columbia University",loc:"New York, NY",domain:"columbia.edu",accept:4,tuition:61,enroll:32,
+   scores:{research:92.3,campus:76.4,career:94.2,aid:70.1,diversity:86.8,athletics:58.7,prestige:94.6,intl:91.2},
+   majors:{cs:9,eng:8,business:9,medicine:9,law:9,arts:9,science:9,social:9,math:8}},
+  {id:8,name:"UChicago",full:"University of Chicago",loc:"Chicago, IL",domain:"uchicago.edu",accept:6,tuition:60,enroll:18,
+   scores:{research:93.8,campus:66.2,career:92.7,aid:71.8,diversity:77.3,athletics:35.4,prestige:94.1,intl:85.7},
+   majors:{cs:8,eng:5,business:9,medicine:8,law:10,arts:8,science:9,social:10,math:9}},
+  {id:9,name:"UPenn",full:"University of Pennsylvania",loc:"Philadelphia, PA",domain:"upenn.edu",accept:7,tuition:61,enroll:28,
+   scores:{research:91.4,campus:81.6,career:95.7,aid:70.4,diversity:81.9,athletics:69.3,prestige:93.8,intl:84.6},
+   majors:{cs:8,eng:8,business:10,medicine:9,law:9,arts:8,science:8,social:8,math:7}},
+  {id:10,name:"Johns Hopkins",full:"Johns Hopkins University",loc:"Baltimore, MD",domain:"jhu.edu",accept:7,tuition:58,enroll:26,
+   scores:{research:95.8,campus:62.7,career:91.3,aid:65.4,diversity:76.1,athletics:41.2,prestige:91.7,intl:88.4},
+   majors:{cs:8,eng:9,business:5,medicine:10,law:5,arts:6,science:10,social:7,math:7}},
+  {id:11,name:"Northwestern",full:"Northwestern University",loc:"Evanston, IL",domain:"northwestern.edu",accept:7,tuition:60,enroll:22,
+   scores:{research:90.1,campus:78.4,career:91.8,aid:68.7,diversity:78.2,athletics:75.4,prestige:91.3,intl:82.1},
+   majors:{cs:8,eng:8,business:9,medicine:8,law:9,arts:9,science:8,social:8,math:7}},
+  {id:12,name:"Duke",full:"Duke University",loc:"Durham, NC",domain:"duke.edu",accept:6,tuition:59,enroll:17,
+   scores:{research:91.6,campus:84.3,career:93.2,aid:72.6,diversity:75.4,athletics:91.7,prestige:91.9,intl:83.6},
+   majors:{cs:8,eng:8,business:9,medicine:9,law:8,arts:8,science:9,social:8,math:7}},
+  {id:13,name:"Dartmouth",full:"Dartmouth College",loc:"Hanover, NH",domain:"dartmouth.edu",accept:8,tuition:59,enroll:8,
+   scores:{research:83.4,campus:84.7,career:91.4,aid:78.6,diversity:70.2,athletics:72.3,prestige:88.4,intl:75.8},
+   majors:{cs:7,eng:7,business:9,medicine:7,law:8,arts:8,science:8,social:8,math:7}},
+  {id:14,name:"Brown",full:"Brown University",loc:"Providence, RI",domain:"brown.edu",accept:5,tuition:60,enroll:11,
+   scores:{research:85.2,campus:87.6,career:88.4,aid:73.1,diversity:81.3,athletics:55.8,prestige:89.2,intl:80.4},
+   majors:{cs:8,eng:7,business:7,medicine:8,law:8,arts:9,science:8,social:9,math:7}},
+  {id:15,name:"Vanderbilt",full:"Vanderbilt University",loc:"Nashville, TN",domain:"vanderbilt.edu",accept:7,tuition:58,enroll:14,
+   scores:{research:83.7,campus:83.2,career:89.4,aid:75.8,diversity:74.1,athletics:79.3,prestige:86.7,intl:74.3},
+   majors:{cs:7,eng:7,business:8,medicine:9,law:8,arts:8,science:8,social:8,math:7}},
+  {id:16,name:"Rice",full:"Rice University",loc:"Houston, TX",domain:"rice.edu",accept:8,tuition:52,enroll:8,
+   scores:{research:86.4,campus:82.1,career:89.7,aid:77.3,diversity:72.8,athletics:52.4,prestige:85.6,intl:76.2},
+   majors:{cs:9,eng:9,business:7,medicine:7,law:4,arts:8,science:9,social:6,math:9}},
+  {id:17,name:"Notre Dame",full:"University of Notre Dame",loc:"Notre Dame, IN",domain:"nd.edu",accept:13,tuition:58,enroll:13,
+   scores:{research:79.3,campus:86.4,career:88.7,aid:74.2,diversity:66.1,athletics:95.4,prestige:86.2,intl:72.1},
+   majors:{cs:7,eng:7,business:9,medicine:7,law:9,arts:8,science:7,social:8,math:6}},
+  {id:18,name:"Cornell",full:"Cornell University",loc:"Ithaca, NY",domain:"cornell.edu",accept:8,tuition:59,enroll:25,
+   scores:{research:89.3,campus:74.6,career:90.8,aid:69.4,diversity:80.7,athletics:68.4,prestige:90.4,intl:81.7},
+   majors:{cs:9,eng:9,business:9,medicine:8,law:7,arts:8,science:9,social:8,math:8}},
+  {id:19,name:"UCLA",full:"University of California, Los Angeles",loc:"Los Angeles, CA",domain:"ucla.edu",accept:9,tuition:13,enroll:47,
+   scores:{research:87.6,campus:83.7,career:88.2,aid:81.4,diversity:87.3,athletics:91.2,prestige:88.6,intl:85.3},
+   majors:{cs:9,eng:8,business:8,medicine:9,law:8,arts:9,science:9,social:8,math:8}},
+  {id:20,name:"UC Berkeley",full:"University of California, Berkeley",loc:"Berkeley, CA",domain:"berkeley.edu",accept:11,tuition:14,enroll:45,
+   scores:{research:93.6,campus:76.8,career:91.4,aid:79.7,diversity:87.1,athletics:85.4,prestige:94.3,intl:89.6},
+   majors:{cs:10,eng:10,business:9,medicine:8,law:9,arts:8,science:10,social:9,math:9}},
+  {id:21,name:"Georgetown",full:"Georgetown University",loc:"Washington, DC",domain:"georgetown.edu",accept:12,tuition:58,enroll:20,
+   scores:{research:77.4,campus:80.6,career:89.3,aid:67.2,diversity:78.4,athletics:63.7,prestige:86.1,intl:84.7},
+   majors:{cs:7,eng:5,business:9,medicine:7,law:10,arts:8,science:7,social:9,math:5}},
+  {id:22,name:"Emory",full:"Emory University",loc:"Atlanta, GA",domain:"emory.edu",accept:14,tuition:55,enroll:15,
+   scores:{research:81.3,campus:74.8,career:86.4,aid:70.7,diversity:76.4,athletics:41.3,prestige:82.4,intl:77.6},
+   majors:{cs:7,eng:6,business:8,medicine:9,law:8,arts:7,science:8,social:8,math:6}},
+  {id:23,name:"CMU",full:"Carnegie Mellon University",loc:"Pittsburgh, PA",domain:"cmu.edu",accept:11,tuition:57,enroll:15,
+   scores:{research:90.7,campus:67.3,career:94.1,aid:66.2,diversity:78.6,athletics:31.4,prestige:88.9,intl:83.2},
+   majors:{cs:10,eng:9,business:8,medicine:4,law:3,arts:9,science:8,social:5,math:9}},
+  {id:24,name:"U Michigan",full:"University of Michigan",loc:"Ann Arbor, MI",domain:"umich.edu",accept:18,tuition:15,enroll:47,
+   scores:{research:88.4,campus:84.2,career:88.7,aid:77.4,diversity:81.6,athletics:95.2,prestige:89.7,intl:82.4},
+   majors:{cs:9,eng:9,business:9,medicine:9,law:9,arts:8,science:9,social:8,math:8}},
+  {id:25,name:"USC",full:"University of Southern California",loc:"Los Angeles, CA",domain:"usc.edu",accept:12,tuition:60,enroll:47,
+   scores:{research:80.6,campus:83.7,career:86.1,aid:64.3,diversity:83.8,athletics:86.4,prestige:83.4,intl:80.7},
+   majors:{cs:8,eng:8,business:8,medicine:7,law:8,arts:9,science:7,social:8,math:6}},
+  {id:26,name:"Wake Forest",full:"Wake Forest University",loc:"Winston-Salem, NC",domain:"wfu.edu",accept:22,tuition:58,enroll:9,
+   scores:{research:61.4,campus:80.3,career:78.2,aid:70.8,diversity:63.4,athletics:71.6,prestige:69.4,intl:58.3},
+   majors:{cs:6,eng:4,business:8,medicine:6,law:7,arts:7,science:6,social:7,math:5}},
+  {id:27,name:"NYU",full:"New York University",loc:"New York, NY",domain:"nyu.edu",accept:13,tuition:56,enroll:60,
+   scores:{research:79.4,campus:73.2,career:86.8,aid:61.4,diversity:86.7,athletics:27.3,prestige:83.7,intl:89.4},
+   majors:{cs:8,eng:6,business:9,medicine:8,law:9,arts:10,science:7,social:8,math:6}},
+  {id:28,name:"Tufts",full:"Tufts University",loc:"Medford, MA",domain:"tufts.edu",accept:10,tuition:59,enroll:12,
+   scores:{research:73.6,campus:77.4,career:82.3,aid:70.1,diversity:73.2,athletics:54.7,prestige:77.8,intl:80.3},
+   majors:{cs:7,eng:7,business:7,medicine:8,law:7,arts:8,science:8,social:8,math:6}},
+  {id:29,name:"UNC",full:"UNC Chapel Hill",loc:"Chapel Hill, NC",domain:"unc.edu",accept:17,tuition:9,enroll:32,
+   scores:{research:82.7,campus:81.4,career:84.3,aid:80.2,diversity:77.8,athletics:87.6,prestige:81.6,intl:72.8},
+   majors:{cs:8,eng:7,business:8,medicine:9,law:8,arts:8,science:8,social:8,math:6}},
+  {id:30,name:"Boston College",full:"Boston College",loc:"Chestnut Hill, MA",domain:"bc.edu",accept:19,tuition:58,enroll:14,
+   scores:{research:62.1,campus:82.4,career:82.7,aid:70.3,diversity:66.4,athletics:76.4,prestige:72.3,intl:62.4},
+   majors:{cs:6,eng:5,business:8,medicine:6,law:8,arts:7,science:6,social:8,math:5}},
+  {id:31,name:"Georgia Tech",full:"Georgia Institute of Technology",loc:"Atlanta, GA",domain:"gatech.edu",accept:17,tuition:12,enroll:40,
+   scores:{research:86.7,campus:67.4,career:92.3,aid:73.6,diversity:74.8,athletics:84.2,prestige:84.3,intl:79.4},
+   majors:{cs:10,eng:10,business:7,medicine:4,law:3,arts:3,science:9,social:4,math:8}},
+  {id:32,name:"W&M",full:"William & Mary",loc:"Williamsburg, VA",domain:"wm.edu",accept:33,tuition:15,enroll:9,
+   scores:{research:56.3,campus:80.4,career:78.4,aid:77.2,diversity:63.7,athletics:61.4,prestige:67.4,intl:58.7},
+   majors:{cs:6,eng:5,business:7,medicine:5,law:8,arts:8,science:7,social:8,math:5}},
+  {id:33,name:"UCSD",full:"UC San Diego",loc:"La Jolla, CA",domain:"ucsd.edu",accept:24,tuition:14,enroll:43,
+   scores:{research:87.4,campus:68.2,career:84.6,aid:79.3,diversity:83.7,athletics:55.4,prestige:82.1,intl:84.7},
+   majors:{cs:9,eng:9,business:5,medicine:9,law:3,arts:5,science:10,social:6,math:8}},
+  {id:34,name:"BU",full:"Boston University",loc:"Boston, MA",domain:"bu.edu",accept:19,tuition:57,enroll:35,
+   scores:{research:75.4,campus:71.6,career:81.4,aid:62.7,diversity:80.3,athletics:49.3,prestige:74.6,intl:76.4},
+   majors:{cs:7,eng:7,business:7,medicine:8,law:7,arts:8,science:7,social:7,math:6}},
+  {id:35,name:"UC Davis",full:"UC Davis",loc:"Davis, CA",domain:"ucdavis.edu",accept:38,tuition:14,enroll:40,
+   scores:{research:81.4,campus:69.7,career:78.4,aid:78.6,diversity:83.4,athletics:63.7,prestige:74.8,intl:79.6},
+   majors:{cs:7,eng:8,business:6,medicine:8,law:4,arts:6,science:9,social:7,math:7}},
+  {id:36,name:"UCSB",full:"UC Santa Barbara",loc:"Santa Barbara, CA",domain:"ucsb.edu",accept:26,tuition:14,enroll:26,
+   scores:{research:83.2,campus:76.4,career:77.4,aid:78.4,diversity:80.7,athletics:61.4,prestige:76.4,intl:78.3},
+   majors:{cs:8,eng:8,business:5,medicine:7,law:3,arts:7,science:9,social:7,math:7}},
+  {id:37,name:"UVA",full:"University of Virginia",loc:"Charlottesville, VA",domain:"virginia.edu",accept:20,tuition:16,enroll:25,
+   scores:{research:80.4,campus:85.3,career:86.7,aid:76.4,diversity:72.3,athletics:83.4,prestige:84.1,intl:72.4},
+   majors:{cs:7,eng:7,business:9,medicine:7,law:9,arts:7,science:7,social:8,math:6}},
+  {id:38,name:"Case Western",full:"Case Western Reserve University",loc:"Cleveland, OH",domain:"case.edu",accept:27,tuition:54,enroll:12,
+   scores:{research:79.4,campus:60.3,career:82.1,aid:67.4,diversity:70.4,athletics:31.4,prestige:70.4,intl:67.3},
+   majors:{cs:7,eng:8,business:6,medicine:9,law:4,arts:5,science:8,social:5,math:6}},
+  {id:39,name:"Tulane",full:"Tulane University",loc:"New Orleans, LA",domain:"tulane.edu",accept:11,tuition:57,enroll:14,
+   scores:{research:71.4,campus:84.7,career:79.4,aid:68.4,diversity:75.7,athletics:62.4,prestige:72.1,intl:69.4},
+   majors:{cs:6,eng:6,business:8,medicine:8,law:7,arts:8,science:7,social:7,math:5}},
+  {id:40,name:"Rochester",full:"University of Rochester",loc:"Rochester, NY",domain:"rochester.edu",accept:30,tuition:56,enroll:11,
+   scores:{research:79.7,campus:67.4,career:80.3,aid:69.4,diversity:72.4,athletics:37.4,prestige:71.4,intl:69.7},
+   majors:{cs:7,eng:8,business:6,medicine:8,law:4,arts:8,science:8,social:6,math:7}},
+  {id:41,name:"Lehigh",full:"Lehigh University",loc:"Bethlehem, PA",domain:"lehigh.edu",accept:32,tuition:57,enroll:9,
+   scores:{research:54.7,campus:72.4,career:79.4,aid:64.3,diversity:58.4,athletics:68.4,prestige:57.4,intl:52.3},
+   majors:{cs:7,eng:8,business:7,medicine:3,law:3,arts:5,science:6,social:5,math:6}},
+  {id:42,name:"RPI",full:"Rensselaer Polytechnic Institute",loc:"Troy, NY",domain:"rpi.edu",accept:57,tuition:58,enroll:8,
+   scores:{research:67.4,campus:55.4,career:82.4,aid:63.4,diversity:64.7,athletics:38.4,prestige:58.7,intl:56.4},
+   majors:{cs:8,eng:9,business:4,medicine:3,law:2,arts:3,science:8,social:3,math:7}},
+  {id:43,name:"Purdue",full:"Purdue University",loc:"W. Lafayette, IN",domain:"purdue.edu",accept:53,tuition:10,enroll:50,
+   scores:{research:79.4,campus:71.4,career:85.4,aid:74.3,diversity:70.4,athletics:80.4,prestige:76.4,intl:72.4},
+   majors:{cs:8,eng:9,business:7,medicine:4,law:3,arts:4,science:8,social:4,math:7}},
+  {id:44,name:"Ohio State",full:"Ohio State University",loc:"Columbus, OH",domain:"osu.edu",accept:54,tuition:11,enroll:61,
+   scores:{research:79.4,campus:81.4,career:80.4,aid:73.4,diversity:75.4,athletics:95.7,prestige:78.4,intl:67.4},
+   majors:{cs:7,eng:8,business:8,medicine:8,law:7,arts:7,science:7,social:7,math:6}},
+  {id:45,name:"UT Austin",full:"University of Texas at Austin",loc:"Austin, TX",domain:"utexas.edu",accept:32,tuition:11,enroll:51,
+   scores:{research:80.4,campus:81.4,career:83.4,aid:75.4,diversity:80.4,athletics:90.4,prestige:81.4,intl:72.4},
+   majors:{cs:8,eng:8,business:9,medicine:7,law:8,arts:8,science:8,social:8,math:7}},
+  {id:46,name:"Penn State",full:"Penn State University",loc:"University Park, PA",domain:"psu.edu",accept:55,tuition:18,enroll:45,
+   scores:{research:73.4,campus:81.4,career:79.4,aid:70.4,diversity:70.7,athletics:92.4,prestige:72.4,intl:63.4},
+   majors:{cs:7,eng:8,business:8,medicine:5,law:4,arts:6,science:7,social:7,math:6}},
+  {id:47,name:"UF",full:"University of Florida",loc:"Gainesville, FL",domain:"ufl.edu",accept:31,tuition:6,enroll:57,
+   scores:{research:77.4,campus:75.4,career:80.4,aid:80.7,diversity:77.4,athletics:90.7,prestige:76.4,intl:68.4},
+   majors:{cs:7,eng:8,business:8,medicine:8,law:7,arts:6,science:8,social:7,math:6}},
+  {id:48,name:"UW Seattle",full:"University of Washington",loc:"Seattle, WA",domain:"washington.edu",accept:52,tuition:12,enroll:48,
+   scores:{research:86.7,campus:72.4,career:85.4,aid:76.4,diversity:81.4,athletics:74.4,prestige:82.4,intl:83.7},
+   majors:{cs:9,eng:9,business:7,medicine:9,law:6,arts:6,science:9,social:7,math:7}},
+  {id:49,name:"UW Madison",full:"University of Wisconsin",loc:"Madison, WI",domain:"wisc.edu",accept:49,tuition:11,enroll:48,
+   scores:{research:82.4,campus:79.4,career:80.4,aid:74.7,diversity:70.7,athletics:86.4,prestige:79.4,intl:74.7},
+   majors:{cs:7,eng:8,business:8,medicine:8,law:6,arts:7,science:8,social:7,math:7}},
+  {id:50,name:"Indiana U",full:"Indiana University",loc:"Bloomington, IN",domain:"indiana.edu",accept:77,tuition:10,enroll:45,
+   scores:{research:62.4,campus:77.4,career:74.4,aid:71.4,diversity:72.4,athletics:74.4,prestige:62.4,intl:60.4},
+   majors:{cs:6,eng:4,business:8,medicine:4,law:7,arts:7,science:6,social:7,math:5}},
+  {id:51,name:"Oxford",full:"University of Oxford",loc:"Oxford, UK",domain:"ox.ac.uk",accept:17,tuition:28,enroll:24,
+   scores:{research:98.1,campus:87.4,career:96.7,aid:68.4,diversity:79.4,athletics:68.4,prestige:99.4,intl:96.7},
+   majors:{cs:9,eng:8,business:9,medicine:10,law:10,arts:10,science:10,social:10,math:10}},
+  {id:52,name:"Cambridge",full:"University of Cambridge",loc:"Cambridge, UK",domain:"cam.ac.uk",accept:21,tuition:28,enroll:24,
+   scores:{research:98.4,campus:84.7,career:96.4,aid:68.4,diversity:77.4,athletics:65.4,prestige:99.1,intl:95.4},
+   majors:{cs:10,eng:10,business:8,medicine:10,law:9,arts:9,science:10,social:9,math:10}},
+  {id:53,name:"Imperial",full:"Imperial College London",loc:"London, UK",domain:"imperial.ac.uk",accept:14,tuition:30,enroll:22,
+   scores:{research:93.4,campus:67.4,career:92.4,aid:61.4,diversity:80.4,athletics:47.4,prestige:89.4,intl:91.4},
+   majors:{cs:9,eng:10,business:7,medicine:10,law:3,arts:2,science:10,social:4,math:9}},
+  {id:54,name:"ETH Zurich",full:"ETH Zürich",loc:"Zurich, Switzerland",domain:"ethz.ch",accept:27,tuition:2,enroll:22,
+   scores:{research:96.4,campus:72.4,career:91.4,aid:83.4,diversity:77.4,athletics:44.4,prestige:93.4,intl:94.7},
+   majors:{cs:10,eng:10,business:5,medicine:7,law:3,arts:3,science:10,social:4,math:10}},
+  {id:55,name:"U Toronto",full:"University of Toronto",loc:"Toronto, Canada",domain:"utoronto.ca",accept:43,tuition:35,enroll:97,
+   scores:{research:86.4,campus:72.4,career:82.4,aid:69.4,diversity:87.4,athletics:58.4,prestige:83.4,intl:86.4},
+   majors:{cs:8,eng:8,business:8,medicine:9,law:8,arts:7,science:9,social:8,math:8}},
+  {id:56,name:"NUS",full:"National University of Singapore",loc:"Singapore",domain:"nus.edu.sg",accept:19,tuition:25,enroll:40,
+   scores:{research:88.4,campus:75.4,career:88.4,aid:77.4,diversity:80.4,athletics:52.4,prestige:87.4,intl:92.4},
+   majors:{cs:9,eng:9,business:9,medicine:9,law:7,arts:6,science:9,social:7,math:8}},
+  {id:57,name:"Peking U",full:"Peking University",loc:"Beijing, China",domain:"pku.edu.cn",accept:1,tuition:5,enroll:46,
+   scores:{research:84.4,campus:77.4,career:82.4,aid:71.4,diversity:38.4,athletics:62.4,prestige:86.4,intl:78.4},
+   majors:{cs:9,eng:8,business:7,medicine:8,law:7,arts:8,science:9,social:7,math:9}},
+  {id:58,name:"U Tokyo",full:"University of Tokyo",loc:"Tokyo, Japan",domain:"u-tokyo.ac.jp",accept:33,tuition:6,enroll:28,
+   scores:{research:86.4,campus:70.4,career:84.4,aid:74.4,diversity:38.4,athletics:55.4,prestige:87.4,intl:78.7},
+   majors:{cs:8,eng:9,business:6,medicine:9,law:7,arts:7,science:9,social:6,math:8}},
+  {id:59,name:"LSE",full:"London School of Economics",loc:"London, UK",domain:"lse.ac.uk",accept:16,tuition:26,enroll:12,
+   scores:{research:86.4,campus:70.4,career:90.7,aid:62.4,diversity:87.4,athletics:31.4,prestige:89.7,intl:93.4},
+   majors:{cs:4,eng:2,business:10,medicine:2,law:9,arts:7,science:5,social:10,math:5}},
+  {id:60,name:"U Melbourne",full:"University of Melbourne",loc:"Melbourne, Australia",domain:"unimelb.edu.au",accept:71,tuition:32,enroll:52,
+   scores:{research:81.4,campus:75.4,career:79.4,aid:67.4,diversity:75.4,athletics:64.4,prestige:78.4,intl:83.4},
+   majors:{cs:7,eng:7,business:8,medicine:8,law:7,arts:7,science:8,social:7,math:6}}
 ];
 
 const MAJORS_DEF=[
   {key:'cs',label:'Computer Science',icon:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`},
   {key:'eng',label:'Engineering',icon:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`},
+  {key:'math',label:'Mathematics',icon:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>`},
   {key:'business',label:'Business',icon:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>`},
   {key:'medicine',label:'Medicine',icon:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`},
   {key:'law',label:'Law',icon:`<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`},
@@ -645,73 +745,101 @@ const SCORE_CONTEXT={
   career:{label:'Career Outcomes',desc:`<p>Tracks alumni employment rates, median salary 10 years out, employer recruiting presence, and alumni network strength.</p>`,tips:['Name recognition varies heavily by industry and geography','Top scores often reflect long-standing employer relationships','Entrepreneurship ecosystems vary significantly by location']},
   aid:{label:'Financial Aid',desc:`<p>Average % of demonstrated need met, and net price for middle-income families. Elite schools often have exceptional need-based aid.</p>`,tips:['Many top schools meet 100% of demonstrated financial need','Aid generosity differs from scholarship availability','Always calculate net price, not sticker price']},
   diversity:{label:'Diversity',desc:`<p>Racial, geographic, socioeconomic, and international representation. Diversity enriches intellectual discourse and prepares graduates for global careers.</p>`,tips:['Urban schools typically score higher for international diversity','Look at both demographic and geographic diversity','First-gen student support programs are worth researching']},
-  athletics:{label:'Athletics',desc:`<p>Prominence of varsity sports programs, number of D1 teams, championship history, and athletics' role in campus identity.</p>`,tips:['Big programs can boost school spirit campus-wide','Division III offers competitive sports with less time demand','Athletic facilities are often shared with general students']}
+  athletics:{label:'Athletics',desc:`<p>Prominence of varsity sports programs, number of D1 teams, championship history, and athletics' role in campus identity.</p>`,tips:['Big programs can boost school spirit campus-wide','Division III offers competitive sports with less time demand','Athletic facilities are often shared with general students']},
+  prestige:{label:'General Prestige',desc:`<p>Global brand recognition, historical reputation, alumni influence in public life, rankings trajectory across major systems, and institutional longevity.</p>`,tips:['Prestige matters most for certain industries: finance, consulting, law','Signaling value is real but should not be the sole factor','Regional prestige varies — a top state school may outperform Ivies locally']},
+  intl:{label:'Intl. Impact & Sustainability',desc:`<p>International research collaborations, study-abroad breadth, global alumni networks, sustainability commitments, and environmental stewardship rankings.</p>`,tips:['Critical for careers in global development, diplomacy, or research','Sustainability rankings increasingly matter to employers','Look for specific programs, not just aggregate scores']}
 };
 
 /* ── STATE ── */
 let userPrefs={
   major:null,campusSize:null,budget:null,
-  // Default weights: academic factors intentionally outweigh campus/athletics
-  weights:{research:75,career:70,aid:55,diversity:50,campus:45,athletics:30}
+  weights:{research:75,career:70,aid:55,diversity:50,campus:45,athletics:30,prestige:60,intl:45}
 };
 let selA=null,selB=null,searchA='',searchB='';
 let prefsOpen=false;
 let gatePrefs={major:null,size:'any',budget:'none'};
-let prefsWereSet=false; // track if user actually changed prefs in gate/fit
+let prefsWereSet=false;
 
 /* ── SCORING ──
-   computeOverall() uses user weights when provided.
-   Default weights de-emphasise campus & athletics vs academic factors.
-   The spread across schools is normalised so header bars are meaningful.
+   Base system weights are multiplied with user priority sliders.
+   The resulting combined weight drives the score.
+   User prefs remain PRIMARY — sliders range 0-100 and are the dominant signal.
+   Base weights only provide the default "fair" ordering when all sliders are equal.
 */
 function computeOverall(c,weights){
   const s=c.scores;
-  const w=weights||userPrefs.weights;
-  const total=Object.values(w).reduce((a,b)=>a+b,0)||1;
-  const raw=(s.research*w.research+s.career*w.career+s.campus*w.campus+s.aid*w.aid+s.diversity*w.diversity+s.athletics*w.athletics)/total;
+  const uw=weights||userPrefs.weights;
 
-  // Apply major bonus (normalised small boost, not runaway)
+  // Combined weight = user slider × system base weight
+  const keys=['research','career','campus','aid','diversity','athletics','prestige','intl'];
+  let total=0,raw=0;
+  keys.forEach(k=>{
+    const combined=(uw[k]||0)*BASE_WEIGHTS[k];
+    total+=combined;
+    raw+=s[k]*combined;
+  });
+  raw=total>0?raw/total:0;
+
+  // Major bonus (±3 pts max)
   let majorBonus=0;
   if(userPrefs.major&&c.majors[userPrefs.major]){
-    majorBonus=(c.majors[userPrefs.major]-5)*0.4; // ±2 pts max
+    majorBonus=(c.majors[userPrefs.major]-5)*0.6;
   }
 
-  // Size penalty/bonus
+  // Size preference modifier
   let sizeMod=0;
-  if(userPrefs.campusSize==='small'&&c.enroll>35)sizeMod=-2;
-  if(userPrefs.campusSize==='large'&&c.enroll<15)sizeMod=-2;
+  if(userPrefs.campusSize==='small'&&c.enroll>35)sizeMod=-3;
+  if(userPrefs.campusSize==='large'&&c.enroll<15)sizeMod=-3;
 
-  // Budget: downweight if cost-sensitive and expensive
+  // Budget modifier
   let aidMod=0;
-  if(userPrefs.budget==='low')aidMod=(s.aid-50)*0.08;
-  if(userPrefs.budget==='high')aidMod=0;
+  if(userPrefs.budget==='low')aidMod=(s.aid-50)*0.1;
 
   return Math.max(0,Math.min(100,raw+majorBonus+sizeMod+aidMod));
 }
 
-function winner(va,vb){const d=va-vb;if(Math.abs(d)<4)return 'tie';return d>0?'a':'b';}
+function fmt(n){return Number.isInteger(n)?n.toString():n.toFixed(1);}
+function winner(va,vb){const d=va-vb;if(Math.abs(d)<2.5)return 'tie';return d>0?'a':'b';}
 function winnerLabel(w,a,b){if(w==='tie')return{cls:'tie',label:'TIE'};if(w==='a')return{cls:'a',label:a.name};return{cls:'b',label:b.name};}
 
-/* ── LOGOS ── */
+/* ── LOGOS — use multiple fallback sources, avoid broken image boxes ── */
 function getInitials(name){return name.split(/\s+/).map(w=>w[0]).join('').slice(0,3).toUpperCase();}
-function makeLogo(domain,name,size){
+function makeLogoHTML(domain,name,size){
   const init=getInitials(name);
   const col=COLORS[Math.abs((name.charCodeAt(0)||0)*3+(name.charCodeAt(1)||0))%COLORS.length];
   const fs=Math.round(size*0.36);
-  const srcList=[
-    `https://img.logo.dev/${domain}?token=pk_X1CYGsZhQ4Wbcfm7tSvOIA&size=${size*2}&format=png`,
-    `https://logo.clearbit.com/${domain}?size=${size*2}`,
-    `https://www.google.com/s2/favicons?domain=${domain}&sz=128`
-  ];
-  return `<div class="logo-box" style="width:${size}px;height:${size}px;">
-    <img src="${srcList[0]}" width="${Math.round(size*.82)}" height="${Math.round(size*.82)}" style="object-fit:contain;" data-srcs='${JSON.stringify(srcList.slice(1))}' data-init="${init}" data-col="${col}" data-fs="${fs}" onerror="nextLogoSrc(this)" loading="lazy">
+  // Inline fallback pattern: try 3 sources then show initials
+  return `<div class="logo-box" style="width:${size}px;height:${size}px;" id="lb-${domain.replace(/\./g,'-')}-${size}">
+    <img
+      src="https://logo.clearbit.com/${domain}?size=${size*2}"
+      width="${Math.round(size*.82)}" height="${Math.round(size*.82)}"
+      style="object-fit:contain;"
+      data-d="${domain}" data-init="${init}" data-col="${col}" data-fs="${fs}" data-tried="0"
+      onerror="logoErr(this)"
+      loading="lazy"
+    >
   </div>`;
 }
-function nextLogoSrc(img){
-  let srcs;try{srcs=JSON.parse(img.dataset.srcs||'[]');}catch(e){srcs=[];}
-  if(srcs.length>0){img.src=srcs[0];img.dataset.srcs=JSON.stringify(srcs.slice(1));}
-  else{const box=img.closest('.logo-box');if(box)box.innerHTML=`<span class="logo-init" style="font-size:${img.dataset.fs}px;color:${img.dataset.col};">${img.dataset.init}</span>`;}
+
+function logoErr(img){
+  const tried=parseInt(img.dataset.tried||0)+1;
+  img.dataset.tried=tried;
+  const d=img.dataset.d;
+  const fallbacks=[
+    `https://www.google.com/s2/favicons?domain=${d}&sz=128`,
+    `https://icons.duckduckgo.com/ip3/${d}.ico`
+  ];
+  if(tried<=fallbacks.length){
+    img.src=fallbacks[tried-1];
+  } else {
+    const box=img.closest('.logo-box');
+    if(box) box.innerHTML=`<span style="font-family:var(--font-display);font-size:${img.dataset.fs}px;color:${img.dataset.col};padding:2px;">${img.dataset.init}</span>`;
+  }
 }
+
+// Alias for backward compat
+function makeLogo(domain,name,size){return makeLogoHTML(domain,name,size);}
+function nextLogoSrc(img){logoErr(img);}
 
 /* ── SELECTION ── */
 function renderList(which){
@@ -728,7 +856,6 @@ function renderList(which){
   }).join('');
 }
 function renderLists(){renderList('a');renderList('b');}
-
 function pick(id,which){const c=COLLEGES.find(x=>x.id===id);if(which==='a')selA=c;else selB=c;renderDisplay(which);renderLists();checkReady();}
 function renderDisplay(which){
   const c=which==='a'?selA:selB;const el=document.getElementById('disp-'+which);
@@ -747,7 +874,11 @@ function checkReady(){
 function togglePrefs(){prefsOpen=!prefsOpen;document.getElementById('prefs-drawer').classList.toggle('open',prefsOpen);document.getElementById('prefs-toggle-btn').classList.toggle('open',prefsOpen);}
 function buildPrefsUI(){
   document.getElementById('major-chips').innerHTML=MAJORS_DEF.map(m=>`<div class="pchip" data-key="${m.key}" onclick="toggleMajor(this,'${m.key}')">${m.label}</div>`).join('');
-  const wkeys=[{k:'research',l:'Research'},{k:'career',l:'Career'},{k:'campus',l:'Campus'},{k:'aid',l:'Aid'},{k:'diversity',l:'Diversity'},{k:'athletics',l:'Athletics'}];
+  const wkeys=[
+    {k:'career',l:'Career'},{k:'aid',l:'Affordability'},{k:'research',l:'Research'},
+    {k:'prestige',l:'Prestige'},{k:'campus',l:'Campus'},{k:'intl',l:'Intl/Sustainability'},
+    {k:'diversity',l:'Diversity'},{k:'athletics',l:'Athletics'}
+  ];
   document.getElementById('weight-sliders').innerHTML=wkeys.map(w=>`<div class="pslider-row"><div class="pslider-lbl">${w.l}</div><input type="range" class="pslider" min="0" max="100" value="${userPrefs.weights[w.k]}" oninput="updateWeight('${w.k}',this.value);document.getElementById('wv-${w.k}').textContent=this.value"><div class="pslider-val" id="wv-${w.k}">${userPrefs.weights[w.k]}</div></div>`).join('');
 }
 function toggleMajor(el,key){userPrefs.major=userPrefs.major===key?null:key;document.querySelectorAll('#major-chips .pchip').forEach(c=>c.classList.toggle('on',c.dataset.key===userPrefs.major));prefsWereSet=true;}
@@ -760,7 +891,11 @@ function buildGateUI(){
   document.getElementById('gate-name-a').textContent=selA.name;
   document.getElementById('gate-name-b').textContent=selB.name;
   document.getElementById('gate-major-chips').innerHTML=MAJORS_DEF.map(m=>`<div class="fitgate-chip${userPrefs.major===m.key?' on':''}" data-key="${m.key}" onclick="setGateMajor(this,'${m.key}')">${m.label}</div>`).join('');
-  const wkeys=[{k:'research',l:'Research & Faculty'},{k:'career',l:'Career Outcomes'},{k:'campus',l:'Campus Experience'},{k:'aid',l:'Affordability'},{k:'diversity',l:'Campus Diversity'},{k:'athletics',l:'Athletics'}];
+  const wkeys=[
+    {k:'career',l:'Career Outcomes'},{k:'aid',l:'Affordability'},{k:'research',l:'Research & Faculty'},
+    {k:'prestige',l:'General Prestige'},{k:'campus',l:'Campus Experience'},
+    {k:'intl',l:'Intl. Impact & Sust.'},{k:'diversity',l:'Diversity'},{k:'athletics',l:'Athletics'}
+  ];
   document.getElementById('gate-weight-sliders').innerHTML=wkeys.map(w=>`<div class="fitgate-slider-row"><div class="fitgate-slider-lbl">${w.l}</div><input type="range" class="fitgate-slider" min="0" max="100" value="${userPrefs.weights[w.k]}" oninput="updateWeight('${w.k}',this.value);document.getElementById('gv-${w.k}').textContent=this.value"><div class="fitgate-slider-val" id="gv-${w.k}">${userPrefs.weights[w.k]}</div></div>`).join('');
 }
 function setGateMajor(el,key){gatePrefs.major=gatePrefs.major===key?null:key;userPrefs.major=gatePrefs.major;document.querySelectorAll('#gate-major-chips .fitgate-chip').forEach(c=>c.classList.toggle('on',c.dataset.key===gatePrefs.major));prefsWereSet=true;}
@@ -781,8 +916,10 @@ function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
 async function runIntro(){
   document.getElementById('iname-a').textContent=selA.name.toUpperCase();
   document.getElementById('iname-b').textContent=selB.name.toUpperCase();
-  document.getElementById('ilogo-a').innerHTML=`<img src="https://img.logo.dev/${selA.domain}?token=pk_X1CYGsZhQ4Wbcfm7tSvOIA&size=160&format=png" width="70" height="70" style="object-fit:contain;" onerror="this.src='https://logo.clearbit.com/${selA.domain}?size=160';this.onerror=null">`;
-  document.getElementById('ilogo-b').innerHTML=`<img src="https://img.logo.dev/${selB.domain}?token=pk_X1CYGsZhQ4Wbcfm7tSvOIA&size=160&format=png" width="70" height="70" style="object-fit:contain;" onerror="this.src='https://logo.clearbit.com/${selB.domain}?size=160';this.onerror=null">`;
+  // Render logos for intro using the same multi-fallback system
+  document.getElementById('ilogo-a').innerHTML=makeLogoHTML(selA.domain,selA.name,70).replace(/logo-box/g,'intro-logo-box-inner').replace(/id="[^"]*"/g,'');
+  document.getElementById('ilogo-b').innerHTML=makeLogoHTML(selB.domain,selB.name,70).replace(/logo-box/g,'intro-logo-box-inner').replace(/id="[^"]*"/g,'');
+
   const flash=document.getElementById('iflash'),sa=document.getElementById('iside-a'),sb=document.getElementById('iside-b'),vs=document.getElementById('ivs'),ft=document.getElementById('ifight'),div=document.getElementById('idivider');
   sa.style.left='-60%';sb.style.right='-60%';vs.style.opacity='0';vs.style.transform='scale(.4)';ft.className='intro-fight-text';ft.style.opacity='0';flash.className='intro-flash';div.style.transform='scaleY(0)';
   await sleep(80);flash.classList.add('on');await sleep(100);flash.classList.remove('on');flash.classList.add('off');await sleep(200);flash.className='intro-flash';
@@ -807,22 +944,18 @@ function drawSparks(){const c=document.getElementById('sparks'),ctx=c.getContext
 function buildComparison(){
   const a=selA,b=selB;
   const ovA=computeOverall(a),ovB=computeOverall(b);
-
   document.getElementById('hdr-a').textContent=a.name;
   document.getElementById('hdr-b').textContent=b.name;
   document.getElementById('hdr-logo-a').innerHTML=makeLogo(a.domain,a.name,36);
   document.getElementById('hdr-logo-b').innerHTML=makeLogo(b.domain,b.name,36);
-
-  // Update header label to note personalisation
-  const scoreLbl=document.getElementById('hdr-score-lbl');
-  scoreLbl.textContent=prefsWereSet?'Your Match Score':'Overall Score';
+  document.getElementById('hdr-score-lbl').textContent=prefsWereSet?'Your Match Score':'Overall Score';
 
   setTimeout(()=>{
-    const pA=Math.round((ovA/99)*100),pB=Math.round((ovB/99)*100);
-    document.getElementById('hbar-a').style.width=pA+'%';
-    document.getElementById('hbar-b').style.width=pB+'%';
-    document.getElementById('hpct-a').textContent=pA+'%';
-    document.getElementById('hpct-b').textContent=pB+'%';
+    const pA=(ovA/100)*100,pB=(ovB/100)*100;
+    document.getElementById('hbar-a').style.width=pA.toFixed(1)+'%';
+    document.getElementById('hbar-b').style.width=pB.toFixed(1)+'%';
+    document.getElementById('hpct-a').textContent=ovA.toFixed(1);
+    document.getElementById('hpct-b').textContent=ovB.toFixed(1);
   },300);
 
   document.querySelectorAll('.tbtn').forEach((b,i)=>b.classList.toggle('on',i===0));
@@ -833,33 +966,36 @@ function buildComparison(){
 
 function buildOverview(a,b){
   document.getElementById('info-row').innerHTML=[
-    {lbl:'ACCEPTANCE',va:a.accept,vb:b.accept,vaS:'%',vbS:'%',vaL:'acceptance rate',vbL:'acceptance rate',w:winner(b.accept,a.accept)},
-    {lbl:'TUITION',va:'$'+a.tuition+'K',vb:'$'+b.tuition+'K',vaS:'',vbS:'',vaL:'per year',vbL:'per year',w:winner(b.tuition,a.tuition)},
-    {lbl:'ENROLLMENT',va:a.enroll+'K',vb:b.enroll+'K',vaS:'',vbS:'',vaL:'students',vbL:'students',w:'tie'},
-    {lbl:'RESEARCH',va:a.scores.research,vb:b.scores.research,vaS:'',vbS:'',vaL:'/ 100',vbL:'/ 100',w:winner(a.scores.research,b.scores.research)}
+    {lbl:'ACCEPTANCE',va:a.accept,vb:b.accept,vaL:'% rate',vbL:'% rate',w:winner(b.accept,a.accept)},
+    {lbl:'TUITION',va:'$'+a.tuition+'K',vb:'$'+b.tuition+'K',vaL:'per year',vbL:'per year',w:winner(b.tuition,a.tuition)},
+    {lbl:'ENROLLMENT',va:a.enroll+'K',vb:b.enroll+'K',vaL:'students',vbL:'students',w:'tie'},
+    {lbl:'PRESTIGE',va:fmt(a.scores.prestige),vb:fmt(b.scores.prestige),vaL:'/ 100',vbL:'/ 100',w:winner(a.scores.prestige,b.scores.prestige)}
   ].map(d=>`<div class="info-card">
     <div class="info-lbl">${d.lbl}</div>
     <div class="info-vals">
-      <div class="info-num a"><span class="big">${d.va}${d.vaS}</span><span class="sub">${d.vaL}</span></div>
+      <div class="info-num a"><span class="big">${d.va}</span><span class="sub">${d.vaL}</span></div>
       <div class="info-mid-vs">vs</div>
-      <div class="info-num b"><span class="big">${d.vb}${d.vbS}</span><span class="sub">${d.vbL}</span></div>
+      <div class="info-num b"><span class="big">${d.vb}</span><span class="sub">${d.vbL}</span></div>
     </div>
     <div class="info-winner-tag ${d.w}">${d.w==='tie'?'Equal':d.w==='a'?a.name+' ahead':b.name+' ahead'}</div>
   </div>`).join('');
 
-  document.getElementById('score-grid').innerHTML=[
-    {k:'research',lbl:'Research Output'},{k:'career',lbl:'Career Outcomes'},
-    {k:'campus',lbl:'Campus Life'},{k:'aid',lbl:'Financial Aid'},
+  const scoreKeys=[
+    {k:'career',lbl:'Career Outcomes'},{k:'aid',lbl:'Financial Aid'},
+    {k:'research',lbl:'Research Output'},{k:'prestige',lbl:'General Prestige'},
+    {k:'campus',lbl:'Campus Life'},{k:'intl',lbl:'Intl. Impact & Sustainability'},
     {k:'diversity',lbl:'Diversity'},{k:'athletics',lbl:'Athletics'}
-  ].map(sk=>{
+  ];
+
+  document.getElementById('score-grid').innerHTML=scoreKeys.map(sk=>{
     const va=a.scores[sk.k],vb=b.scores[sk.k],w=winner(va,vb);
     const{cls,label}=winnerLabel(w,a,b);
     return `<div class="stat-card" onclick="openModal('${sk.k}')">
       <div class="stat-card-title">${sk.lbl}<span class="stat-winner-chip ${cls}">${w==='tie'?'Tied':label}</span></div>
       <div class="stat-rationale">${SCORE_RATIONALE[sk.k]||''}</div>
       <div class="stat-bars">
-        <div class="sbar-row"><div class="sbar-lbl a">${a.name}</div><div class="sbar-track"><div class="sbar-fill a" data-val="${va}"></div></div><div class="sbar-val">${va}</div></div>
-        <div class="sbar-row"><div class="sbar-lbl b">${b.name}</div><div class="sbar-track"><div class="sbar-fill b" data-val="${vb}"></div></div><div class="sbar-val">${vb}</div></div>
+        <div class="sbar-row"><div class="sbar-lbl a">${a.name}</div><div class="sbar-track"><div class="sbar-fill a" data-val="${va}"></div></div><div class="sbar-val">${fmt(va)}</div></div>
+        <div class="sbar-row"><div class="sbar-lbl b">${b.name}</div><div class="sbar-track"><div class="sbar-fill b" data-val="${vb}"></div></div><div class="sbar-val">${fmt(vb)}</div></div>
       </div>
     </div>`;
   }).join('');
@@ -867,9 +1003,9 @@ function buildOverview(a,b){
 
 function buildPerf(a,b){
   document.getElementById('perf-grid').innerHTML=[
-    {cat:'Academic Strength',keys:['research','career']},
+    {cat:'Academic & Research',keys:['research','career','prestige']},
     {cat:'Campus & Culture',keys:['campus','diversity','athletics']},
-    {cat:'Value & Access',keys:['aid']}
+    {cat:'Global Reach & Value',keys:['intl','aid']}
   ].map(g=>{
     const rows=g.keys.map(k=>({lbl:SCORE_CONTEXT[k]?.label||k,va:a.scores[k],vb:b.scores[k],k}));
     const avgA=rows.reduce((s,r)=>s+r.va,0)/rows.length,avgB=rows.reduce((s,r)=>s+r.vb,0)/rows.length;
@@ -878,8 +1014,8 @@ function buildPerf(a,b){
       <div class="stat-card-title">${g.cat}<span class="stat-winner-chip ${cls}">${w==='tie'?'Tied':label}</span></div>
       <div class="stat-bars">${rows.map(r=>`
         <div style="font-family:var(--font-mono);font-size:8px;color:var(--muted);margin:5px 0 4px;letter-spacing:2px;text-transform:uppercase;">${r.lbl}</div>
-        <div class="sbar-row"><div class="sbar-lbl a">${a.name}</div><div class="sbar-track"><div class="sbar-fill a" data-val="${r.va}"></div></div><div class="sbar-val">${r.va}</div></div>
-        <div class="sbar-row" style="margin-bottom:8px"><div class="sbar-lbl b">${b.name}</div><div class="sbar-track"><div class="sbar-fill b" data-val="${r.vb}"></div></div><div class="sbar-val">${r.vb}</div></div>`).join('')}
+        <div class="sbar-row"><div class="sbar-lbl a">${a.name}</div><div class="sbar-track"><div class="sbar-fill a" data-val="${r.va}"></div></div><div class="sbar-val">${fmt(r.va)}</div></div>
+        <div class="sbar-row" style="margin-bottom:8px"><div class="sbar-lbl b">${b.name}</div><div class="sbar-track"><div class="sbar-fill b" data-val="${r.vb}"></div></div><div class="sbar-val">${fmt(r.vb)}</div></div>`).join('')}
       </div>
     </div>`;
   }).join('');
@@ -887,7 +1023,7 @@ function buildPerf(a,b){
 
 function buildMajors(a,b){
   document.getElementById('majors-grid').innerHTML=MAJORS_DEF.map(m=>{
-    const va=a.majors[m.key],vb=b.majors[m.key],w=winner(va,vb);const{cls,label}=winnerLabel(w,a,b);
+    const va=a.majors[m.key]||0,vb=b.majors[m.key]||0,w=winner(va,vb);const{cls,label}=winnerLabel(w,a,b);
     const stA=Array.from({length:10},(_,i)=>`<span class="star ${i<va?'lit a':''}">●</span>`).join('');
     const stB=Array.from({length:10},(_,i)=>`<span class="star ${i<vb?'lit b':''}">●</span>`).join('');
     return `<div class="maj-card win-${w}" onclick="openMajorModal('${m.key}')">
@@ -901,9 +1037,13 @@ function buildMajors(a,b){
 }
 
 /* ── FIT TAB ── */
-let fitPrefs={major:userPrefs.major,size:userPrefs.campusSize,budget:null};
 function buildFit(a,b){
   const el=document.getElementById('fit-quiz');
+  const wkeys=[
+    {k:'career',l:'Career Outcomes'},{k:'aid',l:'Affordability'},{k:'research',l:'Research & Faculty'},
+    {k:'prestige',l:'General Prestige'},{k:'campus',l:'Campus Experience'},
+    {k:'intl',l:'Intl. Impact & Sust.'},{k:'diversity',l:'Diversity'},{k:'athletics',l:'Athletics'}
+  ];
   el.innerHTML=`
   <div class="fit-section">
     <div class="sec-title">Personalised Fit</div>
@@ -913,7 +1053,7 @@ function buildFit(a,b){
   </div>
   <div class="fit-section">
     <div class="fit-section-title">Priority weights — drag to shift what matters</div>
-    <div class="fit-weights">${[{k:'research',l:'Research & Faculty'},{k:'career',l:'Career Outcomes'},{k:'campus',l:'Campus Experience'},{k:'aid',l:'Affordability'},{k:'diversity',l:'Diversity'},{k:'athletics',l:'Athletics'}].map(w=>`<div class="fw-row"><div class="fw-lbl">${w.l}</div><input type="range" class="fw-slider" min="0" max="100" value="${userPrefs.weights[w.k]}" oninput="updateFitWeight('${w.k}',this.value)"><div class="fw-val" id="fitv-${w.k}">${userPrefs.weights[w.k]}</div></div>`).join('')}</div>
+    <div class="fit-weights">${wkeys.map(w=>`<div class="fw-row"><div class="fw-lbl">${w.l}</div><input type="range" class="fw-slider" min="0" max="100" value="${userPrefs.weights[w.k]}" oninput="updateFitWeight('${w.k}',this.value)"><div class="fw-val" id="fitv-${w.k}">${userPrefs.weights[w.k]}</div></div>`).join('')}</div>
   </div>
   <div class="fit-section">
     <div class="fit-section-title">Campus size?</div>
@@ -935,19 +1075,18 @@ function buildFit(a,b){
   <div id="fit-result"></div>`;
   computeFitResult();
 }
-function setFitMajor(key){fitPrefs.major=fitPrefs.major===key?null:key;userPrefs.major=fitPrefs.major;document.querySelectorAll('#fit-major-chips .fit-chip').forEach(c=>c.classList.toggle('on',c.dataset.key===key&&fitPrefs.major===key));computeFitResult();refreshHeaderScore();}
-function setFitSize(el,val){const v=val==='any'?null:val;userPrefs.campusSize=fitPrefs.size=v;document.querySelectorAll('[data-size]').forEach(c=>c.classList.toggle('on',c.dataset.size===val));computeFitResult();refreshHeaderScore();}
-function setFitBudget(el,val){const bMap={sensitive:'low',moderate:'mid',flexible:'high'};fitPrefs.budget=val;userPrefs.budget=bMap[val]||null;document.querySelectorAll('[data-budget]').forEach(c=>c.classList.toggle('on',c.dataset.budget===val));computeFitResult();refreshHeaderScore();}
+function setFitMajor(key){const m=userPrefs.major===key?null:key;userPrefs.major=m;document.querySelectorAll('#fit-major-chips .fit-chip').forEach(c=>c.classList.toggle('on',c.dataset.key===key&&userPrefs.major===key));computeFitResult();refreshHeaderScore();}
+function setFitSize(el,val){const v=val==='any'?null:val;userPrefs.campusSize=v;document.querySelectorAll('[data-size]').forEach(c=>c.classList.toggle('on',c.dataset.size===val));computeFitResult();refreshHeaderScore();}
+function setFitBudget(el,val){const bMap={sensitive:'low',moderate:'mid',flexible:'high'};userPrefs.budget=bMap[val]||null;document.querySelectorAll('[data-budget]').forEach(c=>c.classList.toggle('on',c.dataset.budget===val));computeFitResult();refreshHeaderScore();}
 function updateFitWeight(key,val){userPrefs.weights[key]=parseInt(val);const el=document.getElementById('fitv-'+key);if(el)el.textContent=val;computeFitResult();refreshHeaderScore();}
 
 function refreshHeaderScore(){
   const a=selA,b=selB;if(!a||!b)return;
   const ovA=computeOverall(a),ovB=computeOverall(b);
-  const pA=Math.round((ovA/99)*100),pB=Math.round((ovB/99)*100);
-  document.getElementById('hbar-a').style.width=pA+'%';
-  document.getElementById('hbar-b').style.width=pB+'%';
-  document.getElementById('hpct-a').textContent=pA+'%';
-  document.getElementById('hpct-b').textContent=pB+'%';
+  document.getElementById('hbar-a').style.width=ovA.toFixed(1)+'%';
+  document.getElementById('hbar-b').style.width=ovB.toFixed(1)+'%';
+  document.getElementById('hpct-a').textContent=ovA.toFixed(1);
+  document.getElementById('hpct-b').textContent=ovB.toFixed(1);
   document.getElementById('hdr-score-lbl').textContent='Your Match Score';
   buildVerdict(a,b,ovA,ovB);
 }
@@ -955,17 +1094,14 @@ function refreshHeaderScore(){
 function computeFitResult(){
   const a=selA,b=selB;if(!a||!b)return;
   const el=document.getElementById('fit-result');if(!el)return;
-
-  // Use the full personalised computeOverall with current userPrefs
   const sA=computeOverall(a),sB=computeOverall(b);
   const diff=sA-sB,w=Math.abs(diff)<2?'tie':diff>0?'a':'b';
   const wC=w==='a'?a:w==='b'?b:null,loser=w==='a'?b:w==='b'?a:null;
-
   const reasons=[];
   if(userPrefs.major){
     const maj=MAJORS_DEF.find(m=>m.key===userPrefs.major);
     if(maj&&w!=='tie'){
-      const wa=a.majors[userPrefs.major],wb=b.majors[userPrefs.major];
+      const wa=a.majors[userPrefs.major]||0,wb=b.majors[userPrefs.major]||0;
       if(w==='a'&&wa>wb)reasons.push(`<strong>${a.name}</strong> leads in ${maj.label} (${wa}/10 vs ${wb}/10)`);
       if(w==='b'&&wb>wa)reasons.push(`<strong>${b.name}</strong> leads in ${maj.label} (${wb}/10 vs ${wa}/10)`);
     }
@@ -973,14 +1109,13 @@ function computeFitResult(){
   if(userPrefs.budget==='low'){
     const ch=a.tuition<b.tuition?a:b,ma=a.scores.aid>b.scores.aid?a:b;
     reasons.push(`<strong>${ch.name}</strong> has lower tuition ($${ch.tuition}K/yr)`);
-    if(ma!==ch)reasons.push(`<strong>${ma.name}</strong> offers stronger aid (${ma.scores.aid}/100)`);
+    if(ma!==ch)reasons.push(`<strong>${ma.name}</strong> offers stronger aid (${fmt(ma.scores.aid)}/100)`);
   }
   if(w!=='tie'){
     const tk=Object.keys(userPrefs.weights).sort((x,y)=>userPrefs.weights[y]-userPrefs.weights[x])[0];
     const wa2=wC.scores[tk]||0,wl2=loser.scores[tk]||0;
-    if(wa2>wl2)reasons.push(`<strong>${wC.name}</strong> leads your top priority: ${SCORE_CONTEXT[tk]?.label||tk} (${wa2} vs ${wl2})`);
+    if(wa2>wl2)reasons.push(`<strong>${wC.name}</strong> leads your top priority: ${SCORE_CONTEXT[tk]?.label||tk} (${fmt(wa2)} vs ${fmt(wl2)})`);
   }
-
   el.innerHTML=`<div class="fit-result">
     <div class="fit-result-label">Based on your preferences</div>
     <div class="fit-result-school ${w}">${w==='tie'?'Even Match':wC.name+' is your fit'}</div>
@@ -988,60 +1123,56 @@ function computeFitResult(){
   </div>`;
 }
 
-/* ── VERDICT ──
-   Now uses computeOverall (which includes user prefs) for the overall score,
-   and weights category wins to match user priorities.
-*/
+/* ── VERDICT ── */
 function buildVerdict(a,b,ovA,ovB){
-  const cats=[
-    {lbl:'Research',va:a.scores.research,vb:b.scores.research,key:'research'},
-    {lbl:'Campus Life',va:a.scores.campus,vb:b.scores.campus,key:'campus'},
-    {lbl:'Career',va:a.scores.career,vb:b.scores.career,key:'career'},
-    {lbl:'Financial Aid',va:a.scores.aid,vb:b.scores.aid,key:'aid'},
-    {lbl:'Diversity',va:a.scores.diversity,vb:b.scores.diversity,key:'diversity'},
-    {lbl:'Athletics',va:a.scores.athletics,vb:b.scores.athletics,key:'athletics'},
-    {lbl:'Selectivity',va:100-a.accept,vb:100-b.accept,key:null},
-    {lbl:'CS',va:a.majors.cs*10,vb:b.majors.cs*10,key:null},
-    {lbl:'Engineering',va:a.majors.eng*10,vb:b.majors.eng*10,key:null},
-    {lbl:'Business',va:a.majors.business*10,vb:b.majors.business*10,key:null},
-    {lbl:'Medicine',va:a.majors.medicine*10,vb:b.majors.medicine*10,key:null},
-    {lbl:'Law',va:a.majors.law*10,vb:b.majors.law*10,key:null},
+  const catDefs=[
+    {lbl:'Research',k:'research'},{lbl:'Campus Life',k:'campus'},
+    {lbl:'Career',k:'career'},{lbl:'Financial Aid',k:'aid'},
+    {lbl:'Diversity',k:'diversity'},{lbl:'Athletics',k:'athletics'},
+    {lbl:'Prestige',k:'prestige'},{lbl:'Intl. Impact',k:'intl'},
+    {lbl:'Selectivity',va:100-a.accept,vb:100-b.accept,k:null},
+    {lbl:'CS',va:a.majors.cs*10,vb:b.majors.cs*10,k:null},
+    {lbl:'Math',va:a.majors.math*10,vb:b.majors.math*10,k:null},
+    {lbl:'Engineering',va:a.majors.eng*10,vb:b.majors.eng*10,k:null},
+    {lbl:'Business',va:a.majors.business*10,vb:b.majors.business*10,k:null},
+    {lbl:'Medicine',va:a.majors.medicine*10,vb:b.majors.medicine*10,k:null},
+    {lbl:'Law',va:a.majors.law*10,vb:b.majors.law*10,k:null},
   ];
-
-  /* Weighted win tallies: user-priority categories count more */
   let wA=0,wB=0;
-  const catHTML=cats.map(cat=>{
-    const w=winner(cat.va,cat.vb);
-    const weight=cat.key?((userPrefs.weights[cat.key]||50)/100):0.5;
+  const catHTML=catDefs.map(cat=>{
+    const va=cat.k?a.scores[cat.k]:cat.va;
+    const vb=cat.k?b.scores[cat.k]:cat.vb;
+    const w=winner(va,vb);
+    const weight=cat.k?(((userPrefs.weights[cat.k]||50)*BASE_WEIGHTS[cat.k])/100):0.5;
     if(w==='a')wA+=weight;else if(w==='b')wB+=weight;
     const{cls,label}=winnerLabel(w,a,b);
     return `<div class="vcat"><div class="vcat-lbl">${cat.lbl}</div><div class="vcat-win ${cls}">${w==='tie'?'Tied':label}</div></div>`;
   }).join('');
 
-  // Use personalised overall score to determine winner
   const diff=Math.abs(ovA-ovB);
-  const koText=diff>20?'DOMINANT WIN':diff>12?'CLEAR WINNER':diff>5?'WINNER':diff<2?'TOO CLOSE TO CALL':'NARROW WIN';
-  const finalW=ovA>ovB+1.5?'a':ovB>ovA+1.5?'b':'tie';
+  const koText=diff>18?'DOMINANT WIN':diff>10?'CLEAR WINNER':diff>4?'WINNER':diff<1.5?'TOO CLOSE TO CALL':'NARROW WIN';
+  const finalW=ovA>ovB+1?'a':ovB>ovA+1?'b':'tie';
   const finalName=finalW==='a'?a.name:finalW==='b'?b.name:'Dead Heat';
 
   document.getElementById('v-ko').textContent=koText;
   document.getElementById('v-winner').textContent=finalName.toUpperCase();
   document.getElementById('v-winner').className='verdict-winner '+finalW;
-
   const winPts={a:Math.round(wA*10)/10,b:Math.round(wB*10)/10};
-  document.getElementById('v-sub').textContent=finalW==='tie'?`${a.name} ${winPts.a} — ${winPts.b} ${b.name} · Remarkably even`:`Weighted category score: ${finalW==='a'?winPts.a:winPts.b} vs ${finalW==='a'?winPts.b:winPts.a}`;
-
+  document.getElementById('v-sub').textContent=finalW==='tie'?`${a.name} ${winPts.a} — ${winPts.b} ${b.name} · Remarkably even`:`Overall: ${ovA.toFixed(1)} vs ${ovB.toFixed(1)} · Category score: ${finalW==='a'?winPts.a:winPts.b} vs ${finalW==='a'?winPts.b:winPts.a}`;
   const persnote=document.getElementById('v-personalised');
   if(prefsWereSet){
     const topKey=Object.keys(userPrefs.weights).sort((x,y)=>userPrefs.weights[y]-userPrefs.weights[x])[0];
     const topLabel=SCORE_CONTEXT[topKey]?.label||topKey;
     persnote.textContent=`Personalised · top priority: ${topLabel}${userPrefs.major?' · '+MAJORS_DEF.find(m=>m.key===userPrefs.major)?.label:''}`;
-  } else {persnote.textContent='';}
-
+  } else persnote.textContent='';
   document.getElementById('v-cats').innerHTML=catHTML;
 }
 
-function animateBars(){document.querySelectorAll('.sbar-fill[data-val],.modal-bar-fill[data-val]').forEach(bar=>{bar.style.width=parseFloat(bar.dataset.val)+'%';});}
+function animateBars(){
+  document.querySelectorAll('.sbar-fill[data-val],.modal-bar-fill[data-val]').forEach(bar=>{
+    bar.style.width=parseFloat(bar.dataset.val)+'%';
+  });
+}
 
 /* ── MODALS ── */
 function openModal(scoreKey){
@@ -1053,10 +1184,10 @@ function openModal(scoreKey){
   <div class="modal-section">
     <div class="modal-section-title">Score Comparison</div>
     <div class="modal-compare">
-      <div class="modal-bar-row"><div class="modal-bar-name a">${a.name}</div><div class="modal-bar-track"><div class="modal-bar-fill a" data-val="${va}" style="width:0"></div></div><div class="modal-bar-val">${va}</div></div>
-      <div class="modal-bar-row"><div class="modal-bar-name b">${b.name}</div><div class="modal-bar-track"><div class="modal-bar-fill b" data-val="${vb}" style="width:0"></div></div><div class="modal-bar-val">${vb}</div></div>
+      <div class="modal-bar-row"><div class="modal-bar-name a">${a.name}</div><div class="modal-bar-track"><div class="modal-bar-fill a" data-val="${va}" style="width:0"></div></div><div class="modal-bar-val">${fmt(va)}</div></div>
+      <div class="modal-bar-row"><div class="modal-bar-name b">${b.name}</div><div class="modal-bar-track"><div class="modal-bar-fill b" data-val="${vb}" style="width:0"></div></div><div class="modal-bar-val">${fmt(vb)}</div></div>
     </div>
-    <div class="modal-verdict"><div class="modal-verdict-winner ${cls}">${w==='tie'?'Equal':label+' Leads'}</div><div class="modal-verdict-sub">Gap: ${Math.abs(va-vb)} pts ${w==='tie'?'— effectively tied':''}</div></div>
+    <div class="modal-verdict"><div class="modal-verdict-winner ${cls}">${w==='tie'?'Equal':label+' Leads'}</div><div class="modal-verdict-sub">Gap: ${Math.abs(va-vb).toFixed(1)} pts ${w==='tie'?'— effectively tied':''}</div></div>
   </div>
   <div class="modal-section"><div class="modal-section-title">What This Measures</div><div class="modal-context">${ctx.desc}</div></div>
   <div class="modal-section"><div class="modal-section-title">What To Consider</div><div class="modal-tips">${ctx.tips.map(t=>`<div class="modal-tip">${t}</div>`).join('')}</div></div>`;
@@ -1066,7 +1197,7 @@ function openModal(scoreKey){
 }
 function openMajorModal(key){
   const a=selA,b=selB;if(!a||!b)return;
-  const m=MAJORS_DEF.find(x=>x.key===key),va=a.majors[key],vb=b.majors[key],w=winner(va,vb);const{cls,label}=winnerLabel(w,a,b);
+  const m=MAJORS_DEF.find(x=>x.key===key),va=a.majors[key]||0,vb=b.majors[key]||0,w=winner(va,vb);const{cls,label}=winnerLabel(w,a,b);
   document.getElementById('modal-title').textContent=m.label;
   document.getElementById('modal-body').innerHTML=`
   <div class="modal-section">
@@ -1077,7 +1208,7 @@ function openMajorModal(key){
     </div>
     <div class="modal-verdict"><div class="modal-verdict-winner ${cls}">${w==='tie'?'Even Programs':label+' Stronger'}</div><div class="modal-verdict-sub">${w==='tie'?'Both programs are on par':'A notable difference in program strength'}</div></div>
   </div>
-  <div class="modal-section"><div class="modal-section-title">Related Metrics</div><div class="modal-tips"><div class="modal-tip">Research — ${a.name}: <strong>${a.scores.research}</strong> · ${b.name}: <strong>${b.scores.research}</strong></div><div class="modal-tip">Career outcomes — ${a.name}: <strong>${a.scores.career}</strong> · ${b.name}: <strong>${b.scores.career}</strong></div></div></div>`;
+  <div class="modal-section"><div class="modal-section-title">Related Metrics</div><div class="modal-tips"><div class="modal-tip">Research — ${a.name}: <strong>${fmt(a.scores.research)}</strong> · ${b.name}: <strong>${fmt(b.scores.research)}</strong></div><div class="modal-tip">Career outcomes — ${a.name}: <strong>${fmt(a.scores.career)}</strong> · ${b.name}: <strong>${fmt(b.scores.career)}</strong></div></div></div>`;
   document.getElementById('modal-overlay').classList.add('open');
   document.getElementById('modal-panel').classList.add('open');
   setTimeout(animateBars,100);
